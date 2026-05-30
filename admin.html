@@ -9,8 +9,6 @@
     *{box-sizing:border-box;margin:0;padding:0}
     :root{--verde:#2D6A4F;--verde-claro:#74C69D;--verde-suave:#D8F3DC;--tierra:#8B5E3C;--crema:#F9F5F0;--texto:#2C3E28}
     body{font-family:'Lato',sans-serif;background:var(--crema);min-height:100vh}
-
-    /* LOGIN */
     #login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#1B4332,#2D6A4F)}
     .login-box{background:#fff;border-radius:8px;padding:2.5rem;width:100%;max-width:380px;text-align:center}
     .login-box img{height:70px;margin-bottom:1rem}
@@ -21,8 +19,6 @@
     .btn-login{width:100%;background:var(--verde);color:#fff;border:none;padding:0.75rem;border-radius:4px;font-weight:700;font-size:0.95rem;cursor:pointer;font-family:'Lato',sans-serif}
     .btn-login:hover{background:#1B4332}
     #login-error{display:none;color:#c0392b;font-size:0.82rem;margin-top:0.5rem}
-
-    /* PANEL */
     #panel{display:none}
     .topbar{background:var(--verde);padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
     .topbar-logo{display:flex;align-items:center;gap:0.75rem}
@@ -32,7 +28,6 @@
     .topbar-right span{color:rgba(255,255,255,0.7);font-size:0.82rem}
     .btn-salir{background:rgba(255,255,255,0.15);color:#fff;border:none;padding:0.4rem 1rem;border-radius:4px;cursor:pointer;font-size:0.82rem;font-family:'Lato',sans-serif}
     .btn-salir:hover{background:rgba(255,255,255,0.25)}
-
     .layout{display:flex;min-height:calc(100vh - 60px)}
     .sidebar{width:220px;background:#fff;border-right:0.5px solid #e0dbd5;padding:1.5rem 0;flex-shrink:0}
     .sidebar-section{font-size:0.7rem;font-weight:700;color:#aaa;letter-spacing:1px;text-transform:uppercase;padding:0 1.25rem;margin:1rem 0 0.5rem}
@@ -40,21 +35,14 @@
     .sidebar-item:hover{background:var(--verde-suave);color:var(--verde)}
     .sidebar-item.active{background:var(--verde-suave);color:var(--verde);border-left-color:var(--verde);font-weight:700}
     .sidebar-item .ico{font-size:1rem;width:20px;text-align:center}
-
     .main{flex:1;padding:2rem;overflow-y:auto}
     .page-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--verde);margin-bottom:0.4rem}
     .page-line{width:40px;height:3px;background:var(--verde-claro);border-radius:2px;margin-bottom:1.5rem}
-
-    .tab{display:none}
-    .tab.active{display:block}
-
-    /* STATS */
+    .tab{display:none}.tab.active{display:block}
     .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem}
     .stat-card{background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center}
     .stat-num{font-size:2rem;font-weight:700;color:var(--verde);line-height:1}
     .stat-label{font-size:0.78rem;color:#999;margin-top:0.3rem}
-
-    /* FORMS */
     .form-card{background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.5rem;margin-bottom:1.5rem}
     .form-card h3{font-size:0.95rem;font-weight:700;color:var(--verde);margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:0.5px solid var(--verde-suave)}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0.75rem}
@@ -66,8 +54,6 @@
     .btn-publicar{background:var(--verde);color:#fff;border:none;padding:0.65rem 1.5rem;border-radius:4px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:'Lato',sans-serif;transition:background 0.2s}
     .btn-publicar:hover{background:#1B4332}
     .btn-danger{background:#c0392b;color:#fff;border:none;padding:0.35rem 0.75rem;border-radius:4px;cursor:pointer;font-size:0.78rem;font-family:'Lato',sans-serif}
-
-    /* LISTA ITEMS */
     .item-lista{background:#fff;border-radius:6px;border:0.5px solid #e0dbd5;padding:1rem 1.25rem;margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
     .item-info h4{font-size:0.9rem;font-weight:700;color:var(--texto);margin-bottom:0.2rem}
     .item-info p{font-size:0.78rem;color:#888;line-height:1.4}
@@ -77,11 +63,12 @@
     .tag-aviso{background:#FEF9E7;color:#7d6608}
     .empty-state{text-align:center;padding:2rem;color:#aaa;font-size:0.88rem;background:#f9f9f9;border-radius:6px}
     .success-msg{display:none;background:var(--verde-suave);border-left:3px solid var(--verde);border-radius:0 4px 4px 0;padding:0.75rem 1rem;font-size:0.85rem;color:var(--verde);margin-bottom:1rem;font-weight:700}
+    .loading{text-align:center;padding:1rem;color:#aaa;font-size:0.85rem}
+    .cloud-banner{background:#D8F3DC;border-left:4px solid var(--verde);border-radius:4px;padding:0.75rem 1rem;font-size:0.82rem;color:var(--verde);margin-bottom:1.5rem;font-weight:700}
   </style>
 </head>
 <body>
 
-<!-- LOGIN -->
 <div id="login-screen">
   <div class="login-box">
     <img src="logo_alameda.png" alt="Alameda Campestre">
@@ -94,7 +81,6 @@
   </div>
 </div>
 
-<!-- PANEL -->
 <div id="panel">
   <div class="topbar">
     <div class="topbar-logo">
@@ -106,37 +92,33 @@
       <button class="btn-salir" onclick="salir()">Cerrar sesión</button>
     </div>
   </div>
-
   <div class="layout">
     <div class="sidebar">
       <div class="sidebar-section">Principal</div>
-      <div class="sidebar-item active" onclick="showTab('inicio')"><span class="ico">🏠</span> Inicio</div>
+      <div class="sidebar-item active" onclick="showTab('inicio',this)"><span class="ico">🏠</span> Inicio</div>
       <div class="sidebar-section">Contenido</div>
-      <div class="sidebar-item" onclick="showTab('noticias')"><span class="ico">📰</span> Noticias</div>
-      <div class="sidebar-item" onclick="showTab('circulares')"><span class="ico">📢</span> Circulares</div>
-      <div class="sidebar-item" onclick="showTab('avisos')"><span class="ico">⚠️</span> Avisos urgentes</div>
+      <div class="sidebar-item" onclick="showTab('noticias',this)"><span class="ico">📰</span> Noticias</div>
+      <div class="sidebar-item" onclick="showTab('circulares',this)"><span class="ico">📢</span> Circulares</div>
+      <div class="sidebar-item" onclick="showTab('avisos',this)"><span class="ico">⚠️</span> Avisos urgentes</div>
       <div class="sidebar-section">Gestión</div>
-      <div class="sidebar-item" onclick="showTab('clasificados')"><span class="ico">🏠</span> Clasificados</div>
-      <div class="sidebar-item" onclick="showTab('pqr')"><span class="ico">📋</span> PQR recibidas</div>
-      <div class="sidebar-section">Info</div>
+      <div class="sidebar-item" onclick="showTab('clasificados',this)"><span class="ico">🏠</span> Clasificados</div>
+      <div class="sidebar-item" onclick="showTab('pqr',this)"><span class="ico">📋</span> PQR recibidas</div>
       <div class="sidebar-section">Galería</div>
-      <div class="sidebar-item" onclick="showTab('galeria')"><span class="ico">📸</span> Fotos y galería</div>
-      <div class="sidebar-item" onclick="showTab('equipo')"><span class="ico">👥</span> Equipo de trabajo</div>
+      <div class="sidebar-item" onclick="showTab('galeria',this)"><span class="ico">📸</span> Fotos y galería</div>
+      <div class="sidebar-item" onclick="showTab('equipo',this)"><span class="ico">👥</span> Equipo de trabajo</div>
       <div class="sidebar-section">Info</div>
       <div class="sidebar-item" onclick="window.open('index.html','_blank')"><span class="ico">🌐</span> Ver página web</div>
     </div>
-
     <div class="main">
 
-      <!-- INICIO -->
       <div class="tab active" id="tab-inicio">
         <div class="page-title">Bienvenida, Gladys</div>
         <div class="page-line"></div>
+        <div class="cloud-banner">☁️ Modo nube activo — Todo lo que publique será visible para todos los residentes.</div>
         <div class="stats-grid">
-          <div class="stat-card"><div class="stat-num" id="stat-noticias">0</div><div class="stat-label">Noticias publicadas</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-circulares">0</div><div class="stat-label">Circulares</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-clasificados">0</div><div class="stat-label">Clasificados activos</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-fotos">0</div><div class="stat-label">Fotos en galería</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-noticias">—</div><div class="stat-label">Noticias publicadas</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-circulares">—</div><div class="stat-label">Circulares</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-fotos">—</div><div class="stat-label">Fotos en galería</div></div>
           <div class="stat-card"><div class="stat-num">192</div><div class="stat-label">Apartamentos</div></div>
           <div class="stat-card"><div class="stat-num">204</div><div class="stat-label">Garajes residentes</div></div>
           <div class="stat-card"><div class="stat-num">27</div><div class="stat-label">Garajes visitantes</div></div>
@@ -144,7 +126,7 @@
         <div class="form-card">
           <h3>📌 Accesos rápidos</h3>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem">
-            <button onclick="showTab('noticias')" class="btn-publicar" style="background:#2D6A4F">+ Nueva noticia</button>
+            <button onclick="showTab('noticias')" class="btn-publicar">+ Nueva noticia</button>
             <button onclick="showTab('circulares')" class="btn-publicar" style="background:#8B5E3C">+ Nueva circular</button>
             <button onclick="showTab('avisos')" class="btn-publicar" style="background:#c0392b">+ Aviso urgente</button>
             <button onclick="window.open('index.html','_blank')" class="btn-publicar" style="background:#555">Ver página web</button>
@@ -152,119 +134,74 @@
         </div>
       </div>
 
-      <!-- NOTICIAS -->
       <div class="tab" id="tab-noticias">
         <div class="page-title">Noticias y comunicados</div>
         <div class="page-line"></div>
         <div class="form-card">
           <h3>📰 Publicar nueva noticia</h3>
-          <div id="msg-noticia" class="success-msg">✅ ¡Noticia publicada exitosamente!</div>
+          <div id="msg-noticia" class="success-msg">✅ ¡Noticia publicada!</div>
           <div class="form-row">
             <div><label>Título *</label><input type="text" id="n_titulo" placeholder="Título de la noticia"></div>
             <div><label>Fecha *</label><input type="date" id="n_fecha"></div>
           </div>
           <div class="form-row">
-            <div><label>Categoría</label>
-              <select id="n_cat">
-                <option>Comunicado</option>
-                <option>Mantenimiento</option>
-                <option>Asamblea</option>
-                <option>Seguridad</option>
-                <option>Convivencia</option>
-                <option>Evento</option>
-              </select>
-            </div>
-            <div><label>Importancia</label>
-              <select id="n_imp">
-                <option>Normal</option>
-                <option>Urgente</option>
-                <option>Destacada</option>
-              </select>
-            </div>
+            <div><label>Categoría</label><select id="n_cat"><option>Comunicado</option><option>Mantenimiento</option><option>Asamblea</option><option>Seguridad</option><option>Convivencia</option><option>Evento</option></select></div>
+            <div><label>Importancia</label><select id="n_imp"><option>Normal</option><option>Urgente</option><option>Destacada</option></select></div>
           </div>
-          <div class="form-row full"><label>Descripción *</label><textarea id="n_desc" placeholder="Escriba el contenido de la noticia..."></textarea></div>
+          <div class="form-row full"><label>Descripción *</label><textarea id="n_desc" placeholder="Contenido de la noticia..."></textarea></div>
           <button class="btn-publicar" onclick="publicarNoticia()">Publicar noticia</button>
         </div>
-
-        <div class="form-card">
-          <h3>📋 Noticias publicadas</h3>
-          <div id="lista-noticias"><div class="empty-state">No hay noticias publicadas aún</div></div>
-        </div>
+        <div class="form-card"><h3>📋 Noticias publicadas</h3><div id="lista-noticias"><div class="loading">Cargando...</div></div></div>
       </div>
 
-      <!-- CIRCULARES -->
       <div class="tab" id="tab-circulares">
         <div class="page-title">Circulares informativas</div>
         <div class="page-line"></div>
         <div class="form-card">
           <h3>📢 Nueva circular</h3>
-          <div id="msg-circular" class="success-msg">✅ ¡Circular publicada exitosamente!</div>
+          <div id="msg-circular" class="success-msg">✅ ¡Circular publicada!</div>
           <div class="form-row">
             <div><label>Asunto *</label><input type="text" id="c_asunto" placeholder="Asunto de la circular"></div>
             <div><label>Fecha *</label><input type="date" id="c_fecha"></div>
           </div>
-          <div class="form-row full"><label>Contenido *</label><textarea id="c_contenido" placeholder="Escriba el contenido de la circular..." style="min-height:120px"></textarea></div>
+          <div class="form-row full"><label>Contenido *</label><textarea id="c_contenido" style="min-height:120px" placeholder="Contenido..."></textarea></div>
           <div class="form-row">
-            <div><label>Dirigida a</label>
-              <select id="c_dirigida">
-                <option>Todos los residentes</option>
-                <option>Solo propietarios</option>
-                <option>Solo arrendatarios</option>
-                <option>Consejo de administración</option>
-              </select>
-            </div>
-            <div><label>Número de circular</label><input type="text" id="c_num" placeholder="Ej: Circular 001-2026"></div>
+            <div><label>Dirigida a</label><select id="c_dirigida"><option>Todos los residentes</option><option>Solo propietarios</option><option>Solo arrendatarios</option><option>Consejo de administración</option></select></div>
+            <div><label>Número de circular</label><input type="text" id="c_num" placeholder="Circular 001-2026"></div>
           </div>
           <button class="btn-publicar" onclick="publicarCircular()">Publicar circular</button>
         </div>
-
-        <div class="form-card">
-          <h3>📋 Circulares publicadas</h3>
-          <div id="lista-circulares"><div class="empty-state">No hay circulares publicadas aún</div></div>
-        </div>
+        <div class="form-card"><h3>📋 Circulares publicadas</h3><div id="lista-circulares"><div class="loading">Cargando...</div></div></div>
       </div>
 
-      <!-- AVISOS -->
       <div class="tab" id="tab-avisos">
         <div class="page-title">Avisos urgentes</div>
         <div class="page-line"></div>
         <div class="form-card">
           <h3>⚠️ Nuevo aviso urgente</h3>
-          <div id="msg-aviso" class="success-msg">✅ ¡Aviso publicado en la página!</div>
-          <div class="form-row full"><label>Texto del aviso (aparece en la franja de la página) *</label>
-            <input type="text" id="a_texto" placeholder="Ej: Corte de agua el martes 10 de junio de 8AM a 12M">
-          </div>
-          <button class="btn-publicar" style="background:#c0392b" onclick="publicarAviso()">Publicar aviso urgente</button>
+          <div id="msg-aviso" class="success-msg">✅ ¡Aviso publicado!</div>
+          <div class="form-row full"><label>Texto del aviso *</label><input type="text" id="a_texto" placeholder="Ej: Corte de agua el martes de 8AM a 12M"></div>
+          <button class="btn-publicar" style="background:#c0392b;margin-top:0.75rem" onclick="publicarAviso()">Publicar aviso urgente</button>
         </div>
-        <div class="form-card">
-          <h3>📋 Avisos activos</h3>
-          <div id="lista-avisos"><div class="empty-state">No hay avisos activos</div></div>
-        </div>
+        <div class="form-card"><h3>📋 Avisos activos</h3><div id="lista-avisos"><div class="loading">Cargando...</div></div></div>
       </div>
 
-      <!-- CLASIFICADOS -->
       <div class="tab" id="tab-clasificados">
         <div class="page-title">Gestión de clasificados</div>
         <div class="page-line"></div>
-        <div class="form-card">
-          <h3>🏠 Clasificados publicados por residentes</h3>
-          <p style="font-size:0.82rem;color:#888;margin-bottom:1rem">Aquí aparecen todos los avisos publicados por los residentes. Puede eliminar los que no cumplan el reglamento.</p>
-          <div id="lista-clasificados-admin"><div class="empty-state">No hay clasificados publicados</div></div>
-        </div>
+        <div class="form-card"><h3>🏠 Clasificados de residentes</h3><div id="lista-clasificados-admin"><div class="loading">Cargando...</div></div></div>
       </div>
 
-      <!-- PQR -->
       <div class="tab" id="tab-pqr">
         <div class="page-title">PQR recibidas</div>
         <div class="page-line"></div>
         <div class="form-card">
           <h3>📋 Solicitudes de residentes</h3>
-          <p style="font-size:0.82rem;color:#888;margin-bottom:1rem">Las PQR enviadas por los residentes llegan al correo <strong>alamedacampestre1@gmail.com</strong>. Revise su bandeja de entrada de Gmail para responderlas.</p>
+          <p style="font-size:0.82rem;color:#888;margin-bottom:1rem">Las PQR llegan al correo <strong>alamedacampestre1@gmail.com</strong>.</p>
           <a href="https://mail.google.com" target="_blank" class="btn-publicar" style="display:inline-block;text-decoration:none">Abrir Gmail</a>
         </div>
       </div>
 
-      <!-- GALERÍA -->
       <div class="tab" id="tab-galeria">
         <div class="page-title">Galería de fotos</div>
         <div class="page-line"></div>
@@ -272,71 +209,41 @@
           <h3>📸 Subir nueva foto</h3>
           <div id="msg-foto" class="success-msg">✅ ¡Foto publicada en la galería!</div>
           <div class="form-row">
-            <div><label>Título de la foto *</label><input type="text" id="g_titulo" placeholder="Ej: Jornada de embellecimiento mayo 2026"></div>
-            <div><label>Categoría *</label>
-              <select id="g_cat">
-                <option value="eventos">Eventos</option>
-                <option value="zonas">Zonas comunes</option>
-                <option value="obras">Obras y mejoras</option>
-                <option value="equipo">Equipo de trabajo</option>
-              </select>
-            </div>
+            <div><label>Título *</label><input type="text" id="g_titulo" placeholder="Ej: Jornada de embellecimiento mayo 2026"></div>
+            <div><label>Categoría *</label><select id="g_cat"><option value="eventos">Eventos</option><option value="zonas">Zonas comunes</option><option value="obras">Obras y mejoras</option><option value="equipo">Equipo de trabajo</option></select></div>
           </div>
           <div class="form-row">
             <div><label>Fecha</label><input type="date" id="g_fecha"></div>
-            <div><label>Descripción</label><input type="text" id="g_desc" placeholder="Breve descripción de la foto"></div>
+            <div><label>Descripción</label><input type="text" id="g_desc" placeholder="Breve descripción"></div>
           </div>
           <div class="form-row full">
             <label>Seleccionar foto *</label>
             <input type="file" id="g_file" accept="image/*" onchange="previewFoto(this)" style="padding:0.4rem">
-            <div id="g_preview" style="margin-top:0.75rem;display:none">
-              <img id="g_preview_img" style="max-height:200px;border-radius:6px;border:0.5px solid #ddd">
-            </div>
+            <div id="g_preview" style="margin-top:0.75rem;display:none"><img id="g_preview_img" style="max-height:200px;border-radius:6px;border:0.5px solid #ddd"></div>
           </div>
-          <button class="btn-publicar" onclick="subirFoto()">Publicar en galería</button>
+          <button class="btn-publicar" onclick="subirFoto()" id="btn-subir">Publicar en galería</button>
         </div>
-
-        <div class="form-card">
-          <h3>🖼️ Fotos publicadas</h3>
-          <div id="lista-galeria"><div class="empty-state">No hay fotos en la galería aún</div></div>
-        </div>
+        <div class="form-card"><h3>🖼️ Fotos publicadas</h3><div id="lista-galeria"><div class="loading">Cargando...</div></div></div>
       </div>
 
-      <!-- EQUIPO -->
       <div class="tab" id="tab-equipo">
         <div class="page-title">Equipo de trabajo</div>
         <div class="page-line"></div>
         <div class="form-card">
-          <h3>👥 Agregar miembro del equipo</h3>
-          <div id="msg-equipo" class="success-msg">✅ ¡Miembro del equipo agregado!</div>
+          <h3>👥 Agregar miembro</h3>
+          <div id="msg-equipo" class="success-msg">✅ ¡Miembro agregado!</div>
           <div class="form-row">
             <div><label>Nombre completo *</label><input type="text" id="e_nombre" placeholder="Nombre y apellidos"></div>
-            <div><label>Cargo *</label><input type="text" id="e_cargo" placeholder="Ej: Vigilante, Aseadora, Administradora"></div>
+            <div><label>Cargo *</label><input type="text" id="e_cargo" placeholder="Ej: Vigilante, Aseadora"></div>
           </div>
           <div class="form-row">
-            <div><label>Área</label>
-              <select id="e_area">
-                <option>Administración</option>
-                <option>Vigilancia</option>
-                <option>Aseo y mantenimiento</option>
-                <option>Consejo de administración</option>
-                <option>Comité de convivencia</option>
-              </select>
-            </div>
-            <div><label>Foto del colaborador</label>
-              <input type="file" id="e_foto" accept="image/*" onchange="previewEquipo(this)" style="padding:0.4rem">
-            </div>
+            <div><label>Área</label><select id="e_area"><option>Administración</option><option>Vigilancia</option><option>Aseo y mantenimiento</option><option>Consejo de administración</option><option>Comité de convivencia</option></select></div>
+            <div><label>Foto</label><input type="file" id="e_foto" accept="image/*" onchange="previewEquipo(this)" style="padding:0.4rem"></div>
           </div>
-          <div id="e_preview" style="display:none;margin-bottom:0.75rem">
-            <img id="e_preview_img" style="height:80px;width:80px;object-fit:cover;border-radius:50%;border:2px solid var(--verde)">
-          </div>
+          <div id="e_preview" style="display:none;margin-bottom:0.75rem"><img id="e_preview_img" style="height:80px;width:80px;object-fit:cover;border-radius:50%;border:2px solid var(--verde)"></div>
           <button class="btn-publicar" onclick="agregarEquipo()">Agregar al equipo</button>
         </div>
-
-        <div class="form-card">
-          <h3>👥 Miembros del equipo</h3>
-          <div id="lista-equipo"><div class="empty-state">No hay miembros registrados aún</div></div>
-        </div>
+        <div class="form-card"><h3>👥 Miembros del equipo</h3><div id="lista-equipo"><div class="loading">Cargando...</div></div></div>
       </div>
 
     </div>
@@ -344,10 +251,48 @@
 </div>
 
 <script>
+// ===== CONFIGURACIÓN =====
+var API_KEY = '$2a$10$xRvNgyafKgzpSxeUwX.w1OQ3TMvSob5Vu5V50CRXbcRAzhM5WNiU2';
+var BASE_URL = 'https://api.jsonbin.io/v3/b';
+var BINS = {}; // Se cargarán o crearán automáticamente
+
 var USUARIO = 'admin';
 var CLAVE = 'Alameda2026*';
 
-var datos = JSON.parse(localStorage.getItem('admin_alameda') || '{"noticias":[],"circulares":[],"avisos":[],"clasificados":[]}');
+// Crear o recuperar bin para una colección
+async function getBin(nombre) {
+  var key = 'bin_' + nombre;
+  var binId = localStorage.getItem(key);
+  if (binId) return binId;
+  // Crear nuevo bin
+  var res = await fetch(BASE_URL, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json','X-Master-Key':API_KEY,'X-Bin-Name':'alameda_'+nombre,'X-Bin-Private':'false'},
+    body: JSON.stringify([])
+  });
+  var data = await res.json();
+  binId = data.metadata.id;
+  localStorage.setItem(key, binId);
+  return binId;
+}
+
+async function leer(nombre) {
+  var binId = await getBin(nombre);
+  var res = await fetch(BASE_URL + '/' + binId + '/latest', {
+    headers: {'X-Master-Key': API_KEY}
+  });
+  var data = await res.json();
+  return Array.isArray(data.record) ? data.record : [];
+}
+
+async function guardar(nombre, arr) {
+  var binId = await getBin(nombre);
+  await fetch(BASE_URL + '/' + binId, {
+    method: 'PUT',
+    headers: {'Content-Type':'application/json','X-Master-Key':API_KEY},
+    body: JSON.stringify(arr)
+  });
+}
 
 function login() {
   var u = document.getElementById('usuario').value.trim();
@@ -355,11 +300,10 @@ function login() {
   if (u === USUARIO && c === CLAVE) {
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('panel').style.display = 'block';
-    actualizarStats();
-    renderTodo();
     document.getElementById('n_fecha').valueAsDate = new Date();
     document.getElementById('c_fecha').valueAsDate = new Date();
     document.getElementById('g_fecha').valueAsDate = new Date();
+    cargarTodo();
   } else {
     document.getElementById('login-error').style.display = 'block';
   }
@@ -372,25 +316,11 @@ function salir() {
   document.getElementById('clave').value = '';
 }
 
-function showTab(id) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.sidebar-item').forEach(t => t.classList.remove('active'));
+function showTab(id, el) {
+  document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.sidebar-item').forEach(function(t){ t.classList.remove('active'); });
   document.getElementById('tab-' + id).classList.add('active');
-  event.currentTarget && event.currentTarget.classList.add('active');
-}
-
-function guardar() {
-  localStorage.setItem('admin_alameda', JSON.stringify(datos));
-  actualizarStats();
-}
-
-function actualizarStats() {
-  document.getElementById('stat-noticias').textContent = datos.noticias.length;
-  document.getElementById('stat-circulares').textContent = datos.circulares.length;
-  document.getElementById('stat-clasificados').textContent = datos.clasificados.length;
-  var fotos = JSON.parse(localStorage.getItem('galeria_alameda') || '[]');
-  var statF = document.getElementById('stat-fotos');
-  if (statF) statF.textContent = fotos.length;
+  if (el) el.classList.add('active');
 }
 
 function mostrarMensaje(id) {
@@ -399,112 +329,91 @@ function mostrarMensaje(id) {
   setTimeout(function(){ el.style.display = 'none'; }, 3000);
 }
 
+async function cargarTodo() {
+  cargarNoticias(); cargarCirculares(); cargarAvisos();
+  cargarClasificados(); cargarGaleria(); cargarEquipo();
+}
+
 // NOTICIAS
-function publicarNoticia() {
+async function publicarNoticia() {
   var titulo = document.getElementById('n_titulo').value.trim();
   var desc = document.getElementById('n_desc').value.trim();
   if (!titulo || !desc) { alert('Complete título y descripción'); return; }
-  datos.noticias.unshift({
-    id: Date.now(), titulo: titulo,
-    fecha: document.getElementById('n_fecha').value,
-    cat: document.getElementById('n_cat').value,
-    imp: document.getElementById('n_imp').value,
-    desc: desc
-  });
-  guardar(); renderNoticias();
+  var arr = await leer('noticias');
+  arr.unshift({id:Date.now(), titulo:titulo, fecha:document.getElementById('n_fecha').value, cat:document.getElementById('n_cat').value, imp:document.getElementById('n_imp').value, desc:desc});
+  await guardar('noticias', arr);
   document.getElementById('n_titulo').value = '';
   document.getElementById('n_desc').value = '';
   mostrarMensaje('msg-noticia');
+  cargarNoticias();
 }
 
-function renderNoticias() {
+async function cargarNoticias() {
+  var arr = await leer('noticias');
+  var el = document.getElementById('stat-noticias');
+  if (el) el.textContent = arr.length;
   var lista = document.getElementById('lista-noticias');
-  if (!datos.noticias.length) { lista.innerHTML = '<div class="empty-state">No hay noticias publicadas aún</div>'; return; }
-  lista.innerHTML = datos.noticias.map(function(n, i) {
-    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-noticia">' + n.cat + '</span><h4>' + n.titulo + '</h4><p>' + n.fecha + ' — ' + n.desc.substring(0,80) + '...</p></div><button class="btn-danger" onclick="eliminarNoticia(' + i + ')">Eliminar</button></div>';
+  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay noticias publicadas aún</div>'; return; }
+  lista.innerHTML = arr.map(function(n,i){
+    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-noticia">'+n.cat+'</span><h4>'+n.titulo+'</h4><p>'+n.fecha+' — '+n.desc.substring(0,80)+'...</p></div><button class="btn-danger" onclick="eliminar(\'noticias\','+i+')">Eliminar</button></div>';
   }).join('');
 }
 
-function eliminarNoticia(i) {
-  if (confirm('¿Eliminar esta noticia?')) { datos.noticias.splice(i,1); guardar(); renderNoticias(); }
-}
-
 // CIRCULARES
-function publicarCircular() {
+async function publicarCircular() {
   var asunto = document.getElementById('c_asunto').value.trim();
   var contenido = document.getElementById('c_contenido').value.trim();
   if (!asunto || !contenido) { alert('Complete asunto y contenido'); return; }
-  datos.circulares.unshift({
-    id: Date.now(), asunto: asunto,
-    fecha: document.getElementById('c_fecha').value,
-    contenido: contenido,
-    dirigida: document.getElementById('c_dirigida').value,
-    num: document.getElementById('c_num').value
-  });
-  guardar(); renderCirculares();
+  var arr = await leer('circulares');
+  arr.unshift({id:Date.now(), asunto:asunto, fecha:document.getElementById('c_fecha').value, contenido:contenido, dirigida:document.getElementById('c_dirigida').value, num:document.getElementById('c_num').value});
+  await guardar('circulares', arr);
   document.getElementById('c_asunto').value = '';
   document.getElementById('c_contenido').value = '';
   document.getElementById('c_num').value = '';
   mostrarMensaje('msg-circular');
+  cargarCirculares();
 }
 
-function renderCirculares() {
+async function cargarCirculares() {
+  var arr = await leer('circulares');
+  var el = document.getElementById('stat-circulares');
+  if (el) el.textContent = arr.length;
   var lista = document.getElementById('lista-circulares');
-  if (!datos.circulares.length) { lista.innerHTML = '<div class="empty-state">No hay circulares publicadas aún</div>'; return; }
-  lista.innerHTML = datos.circulares.map(function(c, i) {
-    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-circular">' + c.dirigida + '</span><h4>' + c.asunto + '</h4><p>' + c.fecha + (c.num ? ' — ' + c.num : '') + '</p></div><button class="btn-danger" onclick="eliminarCircular(' + i + ')">Eliminar</button></div>';
+  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay circulares publicadas aún</div>'; return; }
+  lista.innerHTML = arr.map(function(c,i){
+    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-circular">'+c.dirigida+'</span><h4>'+c.asunto+'</h4><p>'+c.fecha+(c.num?' — '+c.num:'')+'</p></div><button class="btn-danger" onclick="eliminar(\'circulares\','+i+')">Eliminar</button></div>';
   }).join('');
-}
-
-function eliminarCircular(i) {
-  if (confirm('¿Eliminar esta circular?')) { datos.circulares.splice(i,1); guardar(); renderCirculares(); }
 }
 
 // AVISOS
-function publicarAviso() {
+async function publicarAviso() {
   var texto = document.getElementById('a_texto').value.trim();
   if (!texto) { alert('Escriba el texto del aviso'); return; }
-  datos.avisos.unshift({ id: Date.now(), texto: texto, fecha: new Date().toLocaleDateString('es-CO') });
-  guardar(); renderAvisos();
+  var arr = await leer('avisos');
+  arr.unshift({id:Date.now(), texto:texto, fecha:new Date().toLocaleDateString('es-CO')});
+  await guardar('avisos', arr);
   document.getElementById('a_texto').value = '';
   mostrarMensaje('msg-aviso');
+  cargarAvisos();
 }
 
-function renderAvisos() {
+async function cargarAvisos() {
+  var arr = await leer('avisos');
   var lista = document.getElementById('lista-avisos');
-  if (!datos.avisos.length) { lista.innerHTML = '<div class="empty-state">No hay avisos activos</div>'; return; }
-  lista.innerHTML = datos.avisos.map(function(a, i) {
-    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-aviso">Urgente</span><h4>' + a.texto + '</h4><p>' + a.fecha + '</p></div><button class="btn-danger" onclick="eliminarAviso(' + i + ')">Eliminar</button></div>';
+  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay avisos activos</div>'; return; }
+  lista.innerHTML = arr.map(function(a,i){
+    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-aviso">Urgente</span><h4>'+a.texto+'</h4><p>'+a.fecha+'</p></div><button class="btn-danger" onclick="eliminar(\'avisos\','+i+')">Eliminar</button></div>';
   }).join('');
-}
-
-function eliminarAviso(i) {
-  if (confirm('¿Eliminar este aviso?')) { datos.avisos.splice(i,1); guardar(); renderAvisos(); }
 }
 
 // CLASIFICADOS
-function renderClasificadosAdmin() {
-  var avisosCl = JSON.parse(localStorage.getItem('avisos_alameda') || '[]');
-  datos.clasificados = avisosCl;
+async function cargarClasificados() {
+  var arr = await leer('clasificados');
   var lista = document.getElementById('lista-clasificados-admin');
-  if (!avisosCl.length) { lista.innerHTML = '<div class="empty-state">No hay clasificados publicados</div>'; return; }
-  lista.innerHTML = avisosCl.map(function(a, i) {
-    return '<div class="item-lista"><div class="item-info"><h4>' + a.tipo + ' — Apto ' + a.apto + '</h4><p>' + (a.precio||'') + (a.deposito ? ' · Depósito: '+a.deposito : '') + ' · ' + a.nombre + ' · ' + a.tel + '</p></div><button class="btn-danger" onclick="eliminarClasificado(' + i + ')">Eliminar</button></div>';
+  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay clasificados publicados</div>'; return; }
+  lista.innerHTML = arr.map(function(a,i){
+    return '<div class="item-lista"><div class="item-info"><h4>'+a.tipo+' — Apto '+a.apto+'</h4><p>'+(a.precio||'')+(a.deposito?' · Depósito: '+a.deposito:'')+' · '+a.nombre+'</p></div><button class="btn-danger" onclick="eliminar(\'clasificados\','+i+')">Eliminar</button></div>';
   }).join('');
-}
-
-function eliminarClasificado(i) {
-  if (confirm('¿Eliminar este clasificado?')) {
-    var avisosCl = JSON.parse(localStorage.getItem('avisos_alameda') || '[]');
-    avisosCl.splice(i,1);
-    localStorage.setItem('avisos_alameda', JSON.stringify(avisosCl));
-    renderClasificadosAdmin();
-  }
-}
-
-function renderTodo() {
-  renderNoticias(); renderCirculares(); renderAvisos(); renderClasificadosAdmin();
-  renderGaleriaAdmin(); renderEquipoAdmin();
 }
 
 // GALERÍA
@@ -519,54 +428,54 @@ function previewFoto(input) {
   }
 }
 
-function subirFoto() {
-  var titulo = document.getElementById('g_titulo').value.trim();
-  var file = document.getElementById('g_file').files[0];
-  if (!titulo || !file) { alert('Complete el título y seleccione una foto'); return; }
+function comprimirImagen(file, callback) {
   var reader = new FileReader();
   reader.onload = function(e) {
-    var fotos = JSON.parse(localStorage.getItem('galeria_alameda') || '[]');
-    fotos.unshift({
-      id: Date.now(), titulo: titulo,
-      cat: document.getElementById('g_cat').value,
-      fecha: document.getElementById('g_fecha').value,
-      desc: document.getElementById('g_desc').value.trim(),
-      img: e.target.result
-    });
-    localStorage.setItem('galeria_alameda', JSON.stringify(fotos));
-    renderGaleriaAdmin();
-    document.getElementById('g_titulo').value = '';
-    document.getElementById('g_desc').value = '';
-    document.getElementById('g_file').value = '';
-    document.getElementById('g_preview').style.display = 'none';
-    mostrarMensaje('msg-foto');
-    actualizarStats();
+    var img = new Image();
+    img.onload = function() {
+      var canvas = document.createElement('canvas');
+      var maxW = 700;
+      var scale = Math.min(1, maxW / img.width);
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+      canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+      callback(canvas.toDataURL('image/jpeg', 0.65));
+    };
+    img.src = e.target.result;
   };
   reader.readAsDataURL(file);
 }
 
-function renderGaleriaAdmin() {
-  var fotos = JSON.parse(localStorage.getItem('galeria_alameda') || '[]');
-  var lista = document.getElementById('lista-galeria');
-  if (!fotos.length) { lista.innerHTML = '<div class="empty-state">No hay fotos en la galería aún</div>'; return; }
-  lista.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem">' +
-    fotos.map(function(f, i) {
-      return '<div style="background:#f9f9f9;border-radius:6px;overflow:hidden;border:0.5px solid #e0dbd5">' +
-        '<img src="' + f.img + '" style="width:100%;height:130px;object-fit:cover">' +
-        '<div style="padding:0.6rem">' +
-        '<p style="font-size:0.8rem;font-weight:700;color:var(--texto);margin-bottom:0.4rem">' + f.titulo + '</p>' +
-        '<button class="btn-danger" onclick="eliminarFoto(' + i + ')">Eliminar</button>' +
-        '</div></div>';
-    }).join('') + '</div>';
+async function subirFoto() {
+  var titulo = document.getElementById('g_titulo').value.trim();
+  var file = document.getElementById('g_file').files[0];
+  if (!titulo || !file) { alert('Complete el título y seleccione una foto'); return; }
+  var btn = document.getElementById('btn-subir');
+  btn.textContent = 'Subiendo...'; btn.disabled = true;
+  comprimirImagen(file, async function(imgData) {
+    var arr = await leer('galeria');
+    arr.unshift({id:Date.now(), titulo:titulo, cat:document.getElementById('g_cat').value, fecha:document.getElementById('g_fecha').value, desc:document.getElementById('g_desc').value.trim(), img:imgData});
+    await guardar('galeria', arr);
+    document.getElementById('g_titulo').value = '';
+    document.getElementById('g_desc').value = '';
+    document.getElementById('g_file').value = '';
+    document.getElementById('g_preview').style.display = 'none';
+    btn.textContent = 'Publicar en galería'; btn.disabled = false;
+    mostrarMensaje('msg-foto');
+    cargarGaleria();
+  });
 }
 
-function eliminarFoto(i) {
-  if (confirm('¿Eliminar esta foto?')) {
-    var fotos = JSON.parse(localStorage.getItem('galeria_alameda') || '[]');
-    fotos.splice(i, 1);
-    localStorage.setItem('galeria_alameda', JSON.stringify(fotos));
-    renderGaleriaAdmin();
-  }
+async function cargarGaleria() {
+  var arr = await leer('galeria');
+  var el = document.getElementById('stat-fotos');
+  if (el) el.textContent = arr.length;
+  var lista = document.getElementById('lista-galeria');
+  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay fotos en la galería aún</div>'; return; }
+  lista.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem">' +
+    arr.map(function(f,i){
+      return '<div style="background:#f9f9f9;border-radius:6px;overflow:hidden;border:0.5px solid #e0dbd5"><img src="'+f.img+'" style="width:100%;height:130px;object-fit:cover"><div style="padding:0.6rem"><p style="font-size:0.8rem;font-weight:700;margin-bottom:0.4rem">'+f.titulo+'</p><button class="btn-danger" onclick="eliminar(\'galeria\','+i+')">Eliminar</button></div></div>';
+    }).join('') + '</div>';
 }
 
 // EQUIPO
@@ -581,59 +490,58 @@ function previewEquipo(input) {
   }
 }
 
-function agregarEquipo() {
+async function agregarEquipo() {
   var nombre = document.getElementById('e_nombre').value.trim();
   var cargo = document.getElementById('e_cargo').value.trim();
   if (!nombre || !cargo) { alert('Complete nombre y cargo'); return; }
-  var equipo = JSON.parse(localStorage.getItem('equipo_alameda') || '[]');
   var file = document.getElementById('e_foto').files[0];
-  if (file) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      equipo.push({ id: Date.now(), nombre: nombre, cargo: cargo, area: document.getElementById('e_area').value, foto: e.target.result });
-      localStorage.setItem('equipo_alameda', JSON.stringify(equipo));
-      renderEquipoAdmin();
-      limpiarEquipo();
-      mostrarMensaje('msg-equipo');
-    };
-    reader.readAsDataURL(file);
-  } else {
-    equipo.push({ id: Date.now(), nombre: nombre, cargo: cargo, area: document.getElementById('e_area').value, foto: '' });
-    localStorage.setItem('equipo_alameda', JSON.stringify(equipo));
-    renderEquipoAdmin();
-    limpiarEquipo();
+  var area = document.getElementById('e_area').value;
+
+  async function guardarMiembro(foto) {
+    var arr = await leer('equipo');
+    arr.push({id:Date.now(), nombre:nombre, cargo:cargo, area:area, foto:foto||''});
+    await guardar('equipo', arr);
+    document.getElementById('e_nombre').value = '';
+    document.getElementById('e_cargo').value = '';
+    document.getElementById('e_foto').value = '';
+    document.getElementById('e_preview').style.display = 'none';
     mostrarMensaje('msg-equipo');
+    cargarEquipo();
+  }
+
+  if (file) {
+    comprimirImagen(file, function(imgData){ guardarMiembro(imgData); });
+  } else {
+    guardarMiembro('');
   }
 }
 
-function limpiarEquipo() {
-  document.getElementById('e_nombre').value = '';
-  document.getElementById('e_cargo').value = '';
-  document.getElementById('e_foto').value = '';
-  document.getElementById('e_preview').style.display = 'none';
-}
-
-function renderEquipoAdmin() {
-  var equipo = JSON.parse(localStorage.getItem('equipo_alameda') || '[]');
+async function cargarEquipo() {
+  var arr = await leer('equipo');
   var lista = document.getElementById('lista-equipo');
-  if (!equipo.length) { lista.innerHTML = '<div class="empty-state">No hay miembros registrados aún</div>'; return; }
-  lista.innerHTML = equipo.map(function(m, i) {
+  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay miembros registrados aún</div>'; return; }
+  lista.innerHTML = arr.map(function(m,i){
     var iniciales = m.nombre.split(' ').map(function(n){ return n[0]; }).slice(0,2).join('');
     return '<div class="item-lista"><div style="display:flex;align-items:center;gap:1rem">' +
-      (m.foto ? '<img src="' + m.foto + '" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--verde-claro)">' :
-      '<div style="width:50px;height:50px;border-radius:50%;background:var(--verde-suave);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--verde);font-size:0.9rem">' + iniciales + '</div>') +
-      '<div><p style="font-weight:700;font-size:0.9rem;color:var(--texto)">' + m.nombre + '</p><p style="font-size:0.78rem;color:#888">' + m.cargo + ' · ' + m.area + '</p></div>' +
-      '</div><button class="btn-danger" onclick="eliminarEquipo(' + i + ')">Eliminar</button></div>';
+      (m.foto ? '<img src="'+m.foto+'" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--verde-claro)">' :
+      '<div style="width:50px;height:50px;border-radius:50%;background:var(--verde-suave);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--verde)">'+iniciales+'</div>') +
+      '<div><p style="font-weight:700;font-size:0.9rem">'+m.nombre+'</p><p style="font-size:0.78rem;color:#888">'+m.cargo+' · '+m.area+'</p></div>' +
+      '</div><button class="btn-danger" onclick="eliminar(\'equipo\','+i+')">Eliminar</button></div>';
   }).join('');
 }
 
-function eliminarEquipo(i) {
-  if (confirm('¿Eliminar este miembro?')) {
-    var equipo = JSON.parse(localStorage.getItem('equipo_alameda') || '[]');
-    equipo.splice(i, 1);
-    localStorage.setItem('equipo_alameda', JSON.stringify(equipo));
-    renderEquipoAdmin();
-  }
+// ELIMINAR
+async function eliminar(coleccion, indice) {
+  if (!confirm('¿Eliminar este elemento?')) return;
+  var arr = await leer(coleccion);
+  arr.splice(indice, 1);
+  await guardar(coleccion, arr);
+  if (coleccion==='noticias') cargarNoticias();
+  else if (coleccion==='circulares') cargarCirculares();
+  else if (coleccion==='avisos') cargarAvisos();
+  else if (coleccion==='clasificados') cargarClasificados();
+  else if (coleccion==='galeria') cargarGaleria();
+  else if (coleccion==='equipo') cargarEquipo();
 }
 </script>
 </body>
