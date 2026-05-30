@@ -27,7 +27,6 @@
     .topbar-right{display:flex;align-items:center;gap:1rem}
     .topbar-right span{color:rgba(255,255,255,0.7);font-size:0.82rem}
     .btn-salir{background:rgba(255,255,255,0.15);color:#fff;border:none;padding:0.4rem 1rem;border-radius:4px;cursor:pointer;font-size:0.82rem;font-family:'Lato',sans-serif}
-    .btn-salir:hover{background:rgba(255,255,255,0.25)}
     .layout{display:flex;min-height:calc(100vh - 60px)}
     .sidebar{width:220px;background:#fff;border-right:0.5px solid #e0dbd5;padding:1.5rem 0;flex-shrink:0}
     .sidebar-section{font-size:0.7rem;font-weight:700;color:#aaa;letter-spacing:1px;text-transform:uppercase;padding:0 1.25rem;margin:1rem 0 0.5rem}
@@ -39,10 +38,6 @@
     .page-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--verde);margin-bottom:0.4rem}
     .page-line{width:40px;height:3px;background:var(--verde-claro);border-radius:2px;margin-bottom:1.5rem}
     .tab{display:none}.tab.active{display:block}
-    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem}
-    .stat-card{background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center}
-    .stat-num{font-size:2rem;font-weight:700;color:var(--verde);line-height:1}
-    .stat-label{font-size:0.78rem;color:#999;margin-top:0.3rem}
     .form-card{background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.5rem;margin-bottom:1.5rem}
     .form-card h3{font-size:0.95rem;font-weight:700;color:var(--verde);margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:0.5px solid var(--verde-suave)}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0.75rem}
@@ -51,20 +46,28 @@
     input[type=text],input[type=date],select,textarea{width:100%;border:0.5px solid #ddd;border-radius:4px;padding:0.55rem 0.75rem;font-size:0.85rem;font-family:'Lato',sans-serif;outline:none}
     input[type=text]:focus,select:focus,textarea:focus{border-color:var(--verde)}
     textarea{resize:vertical;min-height:80px}
-    .btn-publicar{background:var(--verde);color:#fff;border:none;padding:0.65rem 1.5rem;border-radius:4px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:'Lato',sans-serif;transition:background 0.2s}
+    .btn-publicar{background:var(--verde);color:#fff;border:none;padding:0.65rem 1.5rem;border-radius:4px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:'Lato',sans-serif}
     .btn-publicar:hover{background:#1B4332}
     .btn-danger{background:#c0392b;color:#fff;border:none;padding:0.35rem 0.75rem;border-radius:4px;cursor:pointer;font-size:0.78rem;font-family:'Lato',sans-serif}
     .item-lista{background:#fff;border-radius:6px;border:0.5px solid #e0dbd5;padding:1rem 1.25rem;margin-bottom:0.75rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
     .item-info h4{font-size:0.9rem;font-weight:700;color:var(--texto);margin-bottom:0.2rem}
-    .item-info p{font-size:0.78rem;color:#888;line-height:1.4}
+    .item-info p{font-size:0.78rem;color:#888}
     .item-tag{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:2px;margin-bottom:0.4rem}
     .tag-noticia{background:#EBF5FB;color:#1a5276}
     .tag-circular{background:var(--verde-suave);color:var(--verde)}
     .tag-aviso{background:#FEF9E7;color:#7d6608}
     .empty-state{text-align:center;padding:2rem;color:#aaa;font-size:0.88rem;background:#f9f9f9;border-radius:6px}
     .success-msg{display:none;background:var(--verde-suave);border-left:3px solid var(--verde);border-radius:0 4px 4px 0;padding:0.75rem 1rem;font-size:0.85rem;color:var(--verde);margin-bottom:1rem;font-weight:700}
-    .loading{text-align:center;padding:1rem;color:#aaa;font-size:0.85rem}
-    .cloud-banner{background:#D8F3DC;border-left:4px solid var(--verde);border-radius:4px;padding:0.75rem 1rem;font-size:0.82rem;color:var(--verde);margin-bottom:1.5rem;font-weight:700}
+    .fotos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
+    .foto-card{background:#f9f9f9;border-radius:6px;overflow:hidden;border:0.5px solid #e0dbd5}
+    .foto-card img{width:100%;height:120px;object-fit:cover}
+    .foto-card-body{padding:0.6rem}
+    .foto-card-body p{font-size:0.78rem;font-weight:700;color:var(--texto);margin-bottom:0.4rem}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem}
+    .stat-card{background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center}
+    .stat-num{font-size:2rem;font-weight:700;color:var(--verde);line-height:1}
+    .stat-label{font-size:0.78rem;color:#999;margin-top:0.3rem}
+    .info-banner{background:#D8F3DC;border-left:4px solid var(--verde);border-radius:4px;padding:0.75rem 1rem;font-size:0.83rem;color:var(--verde);margin-bottom:1.5rem}
   </style>
 </head>
 <body>
@@ -111,14 +114,14 @@
     </div>
     <div class="main">
 
+      <!-- INICIO -->
       <div class="tab active" id="tab-inicio">
         <div class="page-title">Bienvenida, Gladys</div>
         <div class="page-line"></div>
-        <div class="cloud-banner">☁️ Modo nube activo — Todo lo que publique será visible para todos los residentes.</div>
         <div class="stats-grid">
-          <div class="stat-card"><div class="stat-num" id="stat-noticias">—</div><div class="stat-label">Noticias publicadas</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-circulares">—</div><div class="stat-label">Circulares</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-fotos">—</div><div class="stat-label">Fotos en galería</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-noticias">0</div><div class="stat-label">Noticias</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-circulares">0</div><div class="stat-label">Circulares</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-fotos">0</div><div class="stat-label">Fotos en galería</div></div>
           <div class="stat-card"><div class="stat-num">192</div><div class="stat-label">Apartamentos</div></div>
           <div class="stat-card"><div class="stat-num">204</div><div class="stat-label">Garajes residentes</div></div>
           <div class="stat-card"><div class="stat-num">27</div><div class="stat-label">Garajes visitantes</div></div>
@@ -134,6 +137,7 @@
         </div>
       </div>
 
+      <!-- NOTICIAS -->
       <div class="tab" id="tab-noticias">
         <div class="page-title">Noticias y comunicados</div>
         <div class="page-line"></div>
@@ -151,9 +155,10 @@
           <div class="form-row full"><label>Descripción *</label><textarea id="n_desc" placeholder="Contenido de la noticia..."></textarea></div>
           <button class="btn-publicar" onclick="publicarNoticia()">Publicar noticia</button>
         </div>
-        <div class="form-card"><h3>📋 Noticias publicadas</h3><div id="lista-noticias"><div class="loading">Cargando...</div></div></div>
+        <div class="form-card"><h3>📋 Noticias publicadas</h3><div id="lista-noticias"><div class="empty-state">No hay noticias publicadas aún</div></div></div>
       </div>
 
+      <!-- CIRCULARES -->
       <div class="tab" id="tab-circulares">
         <div class="page-title">Circulares informativas</div>
         <div class="page-line"></div>
@@ -171,9 +176,10 @@
           </div>
           <button class="btn-publicar" onclick="publicarCircular()">Publicar circular</button>
         </div>
-        <div class="form-card"><h3>📋 Circulares publicadas</h3><div id="lista-circulares"><div class="loading">Cargando...</div></div></div>
+        <div class="form-card"><h3>📋 Circulares publicadas</h3><div id="lista-circulares"><div class="empty-state">No hay circulares publicadas aún</div></div></div>
       </div>
 
+      <!-- AVISOS -->
       <div class="tab" id="tab-avisos">
         <div class="page-title">Avisos urgentes</div>
         <div class="page-line"></div>
@@ -183,15 +189,17 @@
           <div class="form-row full"><label>Texto del aviso *</label><input type="text" id="a_texto" placeholder="Ej: Corte de agua el martes de 8AM a 12M"></div>
           <button class="btn-publicar" style="background:#c0392b;margin-top:0.75rem" onclick="publicarAviso()">Publicar aviso urgente</button>
         </div>
-        <div class="form-card"><h3>📋 Avisos activos</h3><div id="lista-avisos"><div class="loading">Cargando...</div></div></div>
+        <div class="form-card"><h3>📋 Avisos activos</h3><div id="lista-avisos"><div class="empty-state">No hay avisos activos</div></div></div>
       </div>
 
+      <!-- CLASIFICADOS -->
       <div class="tab" id="tab-clasificados">
         <div class="page-title">Gestión de clasificados</div>
         <div class="page-line"></div>
-        <div class="form-card"><h3>🏠 Clasificados de residentes</h3><div id="lista-clasificados-admin"><div class="loading">Cargando...</div></div></div>
+        <div class="form-card"><h3>🏠 Clasificados de residentes</h3><div id="lista-clasificados-admin"><div class="empty-state">No hay clasificados publicados</div></div></div>
       </div>
 
+      <!-- PQR -->
       <div class="tab" id="tab-pqr">
         <div class="page-title">PQR recibidas</div>
         <div class="page-line"></div>
@@ -202,30 +210,44 @@
         </div>
       </div>
 
+      <!-- GALERÍA -->
       <div class="tab" id="tab-galeria">
         <div class="page-title">Galería de fotos</div>
         <div class="page-line"></div>
+        <div class="info-banner">📁 Las fotos se muestran desde los archivos que ya están subidos en GitHub. Para agregar más fotos, súbalas a GitHub y luego agréguelas aquí con su nombre de archivo.</div>
         <div class="form-card">
-          <h3>📸 Subir nueva foto</h3>
-          <div id="msg-foto" class="success-msg">✅ ¡Foto publicada en la galería!</div>
+          <h3>📸 Agregar foto a la galería</h3>
+          <div id="msg-foto" class="success-msg">✅ ¡Foto agregada a la galería!</div>
           <div class="form-row">
-            <div><label>Título *</label><input type="text" id="g_titulo" placeholder="Ej: Jornada de embellecimiento mayo 2026"></div>
-            <div><label>Categoría *</label><select id="g_cat"><option value="eventos">Eventos</option><option value="zonas">Zonas comunes</option><option value="obras">Obras y mejoras</option><option value="equipo">Equipo de trabajo</option></select></div>
+            <div><label>Nombre del archivo (exacto) *</label><input type="text" id="g_archivo" placeholder="Ej: foto_cancha.jpg"></div>
+            <div><label>Título para mostrar *</label><input type="text" id="g_titulo" placeholder="Ej: Cancha múltiple"></div>
           </div>
           <div class="form-row">
-            <div><label>Fecha</label><input type="date" id="g_fecha"></div>
+            <div><label>Categoría</label><select id="g_cat"><option value="zonas">Zonas comunes</option><option value="eventos">Eventos</option><option value="obras">Obras y mejoras</option><option value="equipo">Equipo de trabajo</option></select></div>
             <div><label>Descripción</label><input type="text" id="g_desc" placeholder="Breve descripción"></div>
           </div>
-          <div class="form-row full">
-            <label>Seleccionar foto *</label>
-            <input type="file" id="g_file" accept="image/*" onchange="previewFoto(this)" style="padding:0.4rem">
-            <div id="g_preview" style="margin-top:0.75rem;display:none"><img id="g_preview_img" style="max-height:200px;border-radius:6px;border:0.5px solid #ddd"></div>
+          <div id="g_vista_previa" style="margin-bottom:0.75rem;display:none">
+            <img id="g_img_preview" style="max-height:150px;border-radius:6px;border:0.5px solid #ddd">
           </div>
-          <button class="btn-publicar" onclick="subirFoto()" id="btn-subir">Publicar en galería</button>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+            <button class="btn-publicar" style="background:#555" onclick="verPrevia()">Ver previa</button>
+            <button class="btn-publicar" onclick="agregarFoto()">Agregar a galería</button>
+          </div>
         </div>
-        <div class="form-card"><h3>🖼️ Fotos publicadas</h3><div id="lista-galeria"><div class="loading">Cargando...</div></div></div>
+
+        <div class="form-card">
+          <h3>📁 Fotos disponibles en GitHub</h3>
+          <p style="font-size:0.82rem;color:#888;margin-bottom:1rem">Estas son las fotos que ya están subidas. Haga clic en una para agregarla rápidamente.</p>
+          <div class="fotos-grid" id="fotos-disponibles"></div>
+        </div>
+
+        <div class="form-card">
+          <h3>🖼️ Fotos en la galería pública</h3>
+          <div id="lista-galeria"><div class="empty-state">No hay fotos en la galería aún</div></div>
+        </div>
       </div>
 
+      <!-- EQUIPO -->
       <div class="tab" id="tab-equipo">
         <div class="page-title">Equipo de trabajo</div>
         <div class="page-line"></div>
@@ -238,12 +260,11 @@
           </div>
           <div class="form-row">
             <div><label>Área</label><select id="e_area"><option>Administración</option><option>Vigilancia</option><option>Aseo y mantenimiento</option><option>Consejo de administración</option><option>Comité de convivencia</option></select></div>
-            <div><label>Foto</label><input type="file" id="e_foto" accept="image/*" onchange="previewEquipo(this)" style="padding:0.4rem"></div>
+            <div><label>Nombre archivo foto (opcional)</label><input type="text" id="e_foto_archivo" placeholder="Ej: foto_gladys.jpg"></div>
           </div>
-          <div id="e_preview" style="display:none;margin-bottom:0.75rem"><img id="e_preview_img" style="height:80px;width:80px;object-fit:cover;border-radius:50%;border:2px solid var(--verde)"></div>
           <button class="btn-publicar" onclick="agregarEquipo()">Agregar al equipo</button>
         </div>
-        <div class="form-card"><h3>👥 Miembros del equipo</h3><div id="lista-equipo"><div class="loading">Cargando...</div></div></div>
+        <div class="form-card"><h3>👥 Miembros del equipo</h3><div id="lista-equipo"><div class="empty-state">No hay miembros registrados aún</div></div></div>
       </div>
 
     </div>
@@ -251,47 +272,21 @@
 </div>
 
 <script>
-// ===== CONFIGURACIÓN =====
-var API_KEY = '$2a$10$xRvNgyafKgzpSxeUwX.w1OQ3TMvSob5Vu5V50CRXbcRAzhM5WNiU2';
-var BASE_URL = 'https://api.jsonbin.io/v3/b';
-var BINS = {}; // Se cargarán o crearán automáticamente
-
 var USUARIO = 'admin';
 var CLAVE = 'Alameda2026*';
 
-// Crear o recuperar bin para una colección
-async function getBin(nombre) {
-  var key = 'bin_' + nombre;
-  var binId = localStorage.getItem(key);
-  if (binId) return binId;
-  // Crear nuevo bin
-  var res = await fetch(BASE_URL, {
-    method: 'POST',
-    headers: {'Content-Type':'application/json','X-Master-Key':API_KEY,'X-Bin-Name':'alameda_'+nombre,'X-Bin-Private':'false'},
-    body: JSON.stringify([])
-  });
-  var data = await res.json();
-  binId = data.metadata.id;
-  localStorage.setItem(key, binId);
-  return binId;
-}
+// Fotos que ya están en GitHub
+var FOTOS_GITHUB = [
+  'foto_banos1.jpg','foto_banos2.jpg','foto_cancha.jpg','foto_canchagolit.jpg',
+  'foto_cocina.jpg','foto_conjunto.jpg','foto_gimnasio1.jpg','foto_gimnasio2.jpg',
+  'foto_parque.jpg','foto_piscina.jpg','logo_alameda.png'
+];
 
-async function leer(nombre) {
-  var binId = await getBin(nombre);
-  var res = await fetch(BASE_URL + '/' + binId + '/latest', {
-    headers: {'X-Master-Key': API_KEY}
-  });
-  var data = await res.json();
-  return Array.isArray(data.record) ? data.record : [];
-}
+var datos = JSON.parse(localStorage.getItem('admin_alameda') || '{"noticias":[],"circulares":[],"avisos":[],"galeria":[],"equipo":[]}');
 
-async function guardar(nombre, arr) {
-  var binId = await getBin(nombre);
-  await fetch(BASE_URL + '/' + binId, {
-    method: 'PUT',
-    headers: {'Content-Type':'application/json','X-Master-Key':API_KEY},
-    body: JSON.stringify(arr)
-  });
+function guardar() {
+  localStorage.setItem('admin_alameda', JSON.stringify(datos));
+  actualizarStats();
 }
 
 function login() {
@@ -302,8 +297,9 @@ function login() {
     document.getElementById('panel').style.display = 'block';
     document.getElementById('n_fecha').valueAsDate = new Date();
     document.getElementById('c_fecha').valueAsDate = new Date();
-    document.getElementById('g_fecha').valueAsDate = new Date();
-    cargarTodo();
+    actualizarStats();
+    renderTodo();
+    mostrarFotosDisponibles();
   } else {
     document.getElementById('login-error').style.display = 'block';
   }
@@ -329,220 +325,170 @@ function mostrarMensaje(id) {
   setTimeout(function(){ el.style.display = 'none'; }, 3000);
 }
 
-async function cargarTodo() {
-  cargarNoticias(); cargarCirculares(); cargarAvisos();
-  cargarClasificados(); cargarGaleria(); cargarEquipo();
+function actualizarStats() {
+  document.getElementById('stat-noticias').textContent = datos.noticias.length;
+  document.getElementById('stat-circulares').textContent = datos.circulares.length;
+  document.getElementById('stat-fotos').textContent = datos.galeria.length;
 }
 
-// NOTICIAS
-async function publicarNoticia() {
-  var titulo = document.getElementById('n_titulo').value.trim();
-  var desc = document.getElementById('n_desc').value.trim();
-  if (!titulo || !desc) { alert('Complete título y descripción'); return; }
-  var arr = await leer('noticias');
-  arr.unshift({id:Date.now(), titulo:titulo, fecha:document.getElementById('n_fecha').value, cat:document.getElementById('n_cat').value, imp:document.getElementById('n_imp').value, desc:desc});
-  await guardar('noticias', arr);
-  document.getElementById('n_titulo').value = '';
-  document.getElementById('n_desc').value = '';
-  mostrarMensaje('msg-noticia');
-  cargarNoticias();
+function renderTodo() {
+  renderNoticias(); renderCirculares(); renderAvisos(); renderGaleria(); renderEquipo();
 }
 
-async function cargarNoticias() {
-  var arr = await leer('noticias');
-  var el = document.getElementById('stat-noticias');
-  if (el) el.textContent = arr.length;
-  var lista = document.getElementById('lista-noticias');
-  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay noticias publicadas aún</div>'; return; }
-  lista.innerHTML = arr.map(function(n,i){
-    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-noticia">'+n.cat+'</span><h4>'+n.titulo+'</h4><p>'+n.fecha+' — '+n.desc.substring(0,80)+'...</p></div><button class="btn-danger" onclick="eliminar(\'noticias\','+i+')">Eliminar</button></div>';
+// FOTOS GITHUB
+function mostrarFotosDisponibles() {
+  var cont = document.getElementById('fotos-disponibles');
+  cont.innerHTML = FOTOS_GITHUB.map(function(f) {
+    return '<div class="foto-card" style="cursor:pointer" onclick="seleccionarFoto(\''+f+'\')">' +
+      '<img src="'+f+'" onerror="this.style.display=\'none\'">' +
+      '<div class="foto-card-body"><p>'+f+'</p>' +
+      '<button class="btn-publicar" style="font-size:0.75rem;padding:0.3rem 0.6rem" onclick="event.stopPropagation();seleccionarFoto(\''+f+'\')">Usar esta</button>' +
+      '</div></div>';
   }).join('');
 }
 
+function seleccionarFoto(nombre) {
+  document.getElementById('g_archivo').value = nombre;
+  var titulo = nombre.replace('foto_','').replace('.jpg','').replace('.png','').replace(/_/g,' ');
+  titulo = titulo.charAt(0).toUpperCase() + titulo.slice(1);
+  document.getElementById('g_titulo').value = titulo;
+  verPrevia();
+  window.scrollTo(0,0);
+}
+
+function verPrevia() {
+  var archivo = document.getElementById('g_archivo').value.trim();
+  if (!archivo) return;
+  document.getElementById('g_img_preview').src = archivo;
+  document.getElementById('g_vista_previa').style.display = 'block';
+}
+
+function agregarFoto() {
+  var archivo = document.getElementById('g_archivo').value.trim();
+  var titulo = document.getElementById('g_titulo').value.trim();
+  if (!archivo || !titulo) { alert('Complete el nombre del archivo y el título'); return; }
+  datos.galeria.unshift({
+    id: Date.now(),
+    archivo: archivo,
+    titulo: titulo,
+    cat: document.getElementById('g_cat').value,
+    desc: document.getElementById('g_desc').value.trim()
+  });
+  guardar(); renderGaleria();
+  document.getElementById('g_archivo').value = '';
+  document.getElementById('g_titulo').value = '';
+  document.getElementById('g_desc').value = '';
+  document.getElementById('g_vista_previa').style.display = 'none';
+  mostrarMensaje('msg-foto');
+}
+
+function renderGaleria() {
+  var lista = document.getElementById('lista-galeria');
+  if (!datos.galeria.length) { lista.innerHTML = '<div class="empty-state">No hay fotos en la galería aún</div>'; return; }
+  lista.innerHTML = '<div class="fotos-grid">' +
+    datos.galeria.map(function(f,i) {
+      return '<div class="foto-card"><img src="'+f.archivo+'" onerror="this.src=\'logo_alameda.png\'">' +
+        '<div class="foto-card-body"><p>'+f.titulo+'</p>' +
+        '<button class="btn-danger" onclick="eliminarFoto('+i+')">Eliminar</button></div></div>';
+    }).join('') + '</div>';
+}
+
+function eliminarFoto(i) {
+  if (confirm('¿Eliminar esta foto de la galería?')) { datos.galeria.splice(i,1); guardar(); renderGaleria(); }
+}
+
+// NOTICIAS
+function publicarNoticia() {
+  var titulo = document.getElementById('n_titulo').value.trim();
+  var desc = document.getElementById('n_desc').value.trim();
+  if (!titulo || !desc) { alert('Complete título y descripción'); return; }
+  datos.noticias.unshift({id:Date.now(),titulo:titulo,fecha:document.getElementById('n_fecha').value,cat:document.getElementById('n_cat').value,imp:document.getElementById('n_imp').value,desc:desc});
+  guardar(); renderNoticias();
+  document.getElementById('n_titulo').value = '';
+  document.getElementById('n_desc').value = '';
+  mostrarMensaje('msg-noticia');
+}
+
+function renderNoticias() {
+  var lista = document.getElementById('lista-noticias');
+  if (!datos.noticias.length) { lista.innerHTML = '<div class="empty-state">No hay noticias publicadas aún</div>'; return; }
+  lista.innerHTML = datos.noticias.map(function(n,i){
+    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-noticia">'+n.cat+'</span><h4>'+n.titulo+'</h4><p>'+n.fecha+' — '+n.desc.substring(0,80)+'...</p></div><button class="btn-danger" onclick="eliminarNoticia('+i+')">Eliminar</button></div>';
+  }).join('');
+}
+
+function eliminarNoticia(i) { if(confirm('¿Eliminar?')){ datos.noticias.splice(i,1); guardar(); renderNoticias(); } }
+
 // CIRCULARES
-async function publicarCircular() {
+function publicarCircular() {
   var asunto = document.getElementById('c_asunto').value.trim();
   var contenido = document.getElementById('c_contenido').value.trim();
   if (!asunto || !contenido) { alert('Complete asunto y contenido'); return; }
-  var arr = await leer('circulares');
-  arr.unshift({id:Date.now(), asunto:asunto, fecha:document.getElementById('c_fecha').value, contenido:contenido, dirigida:document.getElementById('c_dirigida').value, num:document.getElementById('c_num').value});
-  await guardar('circulares', arr);
+  datos.circulares.unshift({id:Date.now(),asunto:asunto,fecha:document.getElementById('c_fecha').value,contenido:contenido,dirigida:document.getElementById('c_dirigida').value,num:document.getElementById('c_num').value});
+  guardar(); renderCirculares();
   document.getElementById('c_asunto').value = '';
   document.getElementById('c_contenido').value = '';
   document.getElementById('c_num').value = '';
   mostrarMensaje('msg-circular');
-  cargarCirculares();
 }
 
-async function cargarCirculares() {
-  var arr = await leer('circulares');
-  var el = document.getElementById('stat-circulares');
-  if (el) el.textContent = arr.length;
+function renderCirculares() {
   var lista = document.getElementById('lista-circulares');
-  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay circulares publicadas aún</div>'; return; }
-  lista.innerHTML = arr.map(function(c,i){
-    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-circular">'+c.dirigida+'</span><h4>'+c.asunto+'</h4><p>'+c.fecha+(c.num?' — '+c.num:'')+'</p></div><button class="btn-danger" onclick="eliminar(\'circulares\','+i+')">Eliminar</button></div>';
+  if (!datos.circulares.length) { lista.innerHTML = '<div class="empty-state">No hay circulares publicadas aún</div>'; return; }
+  lista.innerHTML = datos.circulares.map(function(c,i){
+    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-circular">'+c.dirigida+'</span><h4>'+c.asunto+'</h4><p>'+c.fecha+(c.num?' — '+c.num:'')+'</p></div><button class="btn-danger" onclick="eliminarCircular('+i+')">Eliminar</button></div>';
   }).join('');
 }
+
+function eliminarCircular(i) { if(confirm('¿Eliminar?')){ datos.circulares.splice(i,1); guardar(); renderCirculares(); } }
 
 // AVISOS
-async function publicarAviso() {
+function publicarAviso() {
   var texto = document.getElementById('a_texto').value.trim();
   if (!texto) { alert('Escriba el texto del aviso'); return; }
-  var arr = await leer('avisos');
-  arr.unshift({id:Date.now(), texto:texto, fecha:new Date().toLocaleDateString('es-CO')});
-  await guardar('avisos', arr);
+  datos.avisos.unshift({id:Date.now(),texto:texto,fecha:new Date().toLocaleDateString('es-CO')});
+  guardar(); renderAvisos();
   document.getElementById('a_texto').value = '';
   mostrarMensaje('msg-aviso');
-  cargarAvisos();
 }
 
-async function cargarAvisos() {
-  var arr = await leer('avisos');
+function renderAvisos() {
   var lista = document.getElementById('lista-avisos');
-  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay avisos activos</div>'; return; }
-  lista.innerHTML = arr.map(function(a,i){
-    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-aviso">Urgente</span><h4>'+a.texto+'</h4><p>'+a.fecha+'</p></div><button class="btn-danger" onclick="eliminar(\'avisos\','+i+')">Eliminar</button></div>';
+  if (!datos.avisos.length) { lista.innerHTML = '<div class="empty-state">No hay avisos activos</div>'; return; }
+  lista.innerHTML = datos.avisos.map(function(a,i){
+    return '<div class="item-lista"><div class="item-info"><span class="item-tag tag-aviso">Urgente</span><h4>'+a.texto+'</h4><p>'+a.fecha+'</p></div><button class="btn-danger" onclick="eliminarAviso('+i+')">Eliminar</button></div>';
   }).join('');
 }
 
-// CLASIFICADOS
-async function cargarClasificados() {
-  var arr = await leer('clasificados');
-  var lista = document.getElementById('lista-clasificados-admin');
-  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay clasificados publicados</div>'; return; }
-  lista.innerHTML = arr.map(function(a,i){
-    return '<div class="item-lista"><div class="item-info"><h4>'+a.tipo+' — Apto '+a.apto+'</h4><p>'+(a.precio||'')+(a.deposito?' · Depósito: '+a.deposito:'')+' · '+a.nombre+'</p></div><button class="btn-danger" onclick="eliminar(\'clasificados\','+i+')">Eliminar</button></div>';
-  }).join('');
-}
-
-// GALERÍA
-function previewFoto(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      document.getElementById('g_preview_img').src = e.target.result;
-      document.getElementById('g_preview').style.display = 'block';
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-
-function comprimirImagen(file, callback) {
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var img = new Image();
-    img.onload = function() {
-      var canvas = document.createElement('canvas');
-      var maxW = 700;
-      var scale = Math.min(1, maxW / img.width);
-      canvas.width = img.width * scale;
-      canvas.height = img.height * scale;
-      canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-      callback(canvas.toDataURL('image/jpeg', 0.65));
-    };
-    img.src = e.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-async function subirFoto() {
-  var titulo = document.getElementById('g_titulo').value.trim();
-  var file = document.getElementById('g_file').files[0];
-  if (!titulo || !file) { alert('Complete el título y seleccione una foto'); return; }
-  var btn = document.getElementById('btn-subir');
-  btn.textContent = 'Subiendo...'; btn.disabled = true;
-  comprimirImagen(file, async function(imgData) {
-    var arr = await leer('galeria');
-    arr.unshift({id:Date.now(), titulo:titulo, cat:document.getElementById('g_cat').value, fecha:document.getElementById('g_fecha').value, desc:document.getElementById('g_desc').value.trim(), img:imgData});
-    await guardar('galeria', arr);
-    document.getElementById('g_titulo').value = '';
-    document.getElementById('g_desc').value = '';
-    document.getElementById('g_file').value = '';
-    document.getElementById('g_preview').style.display = 'none';
-    btn.textContent = 'Publicar en galería'; btn.disabled = false;
-    mostrarMensaje('msg-foto');
-    cargarGaleria();
-  });
-}
-
-async function cargarGaleria() {
-  var arr = await leer('galeria');
-  var el = document.getElementById('stat-fotos');
-  if (el) el.textContent = arr.length;
-  var lista = document.getElementById('lista-galeria');
-  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay fotos en la galería aún</div>'; return; }
-  lista.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem">' +
-    arr.map(function(f,i){
-      return '<div style="background:#f9f9f9;border-radius:6px;overflow:hidden;border:0.5px solid #e0dbd5"><img src="'+f.img+'" style="width:100%;height:130px;object-fit:cover"><div style="padding:0.6rem"><p style="font-size:0.8rem;font-weight:700;margin-bottom:0.4rem">'+f.titulo+'</p><button class="btn-danger" onclick="eliminar(\'galeria\','+i+')">Eliminar</button></div></div>';
-    }).join('') + '</div>';
-}
+function eliminarAviso(i) { if(confirm('¿Eliminar?')){ datos.avisos.splice(i,1); guardar(); renderAvisos(); } }
 
 // EQUIPO
-function previewEquipo(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      document.getElementById('e_preview_img').src = e.target.result;
-      document.getElementById('e_preview').style.display = 'block';
-    };
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-
-async function agregarEquipo() {
+function agregarEquipo() {
   var nombre = document.getElementById('e_nombre').value.trim();
   var cargo = document.getElementById('e_cargo').value.trim();
   if (!nombre || !cargo) { alert('Complete nombre y cargo'); return; }
-  var file = document.getElementById('e_foto').files[0];
-  var area = document.getElementById('e_area').value;
-
-  async function guardarMiembro(foto) {
-    var arr = await leer('equipo');
-    arr.push({id:Date.now(), nombre:nombre, cargo:cargo, area:area, foto:foto||''});
-    await guardar('equipo', arr);
-    document.getElementById('e_nombre').value = '';
-    document.getElementById('e_cargo').value = '';
-    document.getElementById('e_foto').value = '';
-    document.getElementById('e_preview').style.display = 'none';
-    mostrarMensaje('msg-equipo');
-    cargarEquipo();
-  }
-
-  if (file) {
-    comprimirImagen(file, function(imgData){ guardarMiembro(imgData); });
-  } else {
-    guardarMiembro('');
-  }
+  datos.equipo.push({id:Date.now(),nombre:nombre,cargo:cargo,area:document.getElementById('e_area').value,foto:document.getElementById('e_foto_archivo').value.trim()});
+  guardar(); renderEquipo();
+  document.getElementById('e_nombre').value = '';
+  document.getElementById('e_cargo').value = '';
+  document.getElementById('e_foto_archivo').value = '';
+  mostrarMensaje('msg-equipo');
 }
 
-async function cargarEquipo() {
-  var arr = await leer('equipo');
+function renderEquipo() {
   var lista = document.getElementById('lista-equipo');
-  if (!arr.length) { lista.innerHTML = '<div class="empty-state">No hay miembros registrados aún</div>'; return; }
-  lista.innerHTML = arr.map(function(m,i){
+  if (!datos.equipo.length) { lista.innerHTML = '<div class="empty-state">No hay miembros registrados aún</div>'; return; }
+  lista.innerHTML = datos.equipo.map(function(m,i){
     var iniciales = m.nombre.split(' ').map(function(n){ return n[0]; }).slice(0,2).join('');
     return '<div class="item-lista"><div style="display:flex;align-items:center;gap:1rem">' +
-      (m.foto ? '<img src="'+m.foto+'" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--verde-claro)">' :
+      (m.foto ? '<img src="'+m.foto+'" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--verde-claro)" onerror="this.style.display=\'none\'">' :
       '<div style="width:50px;height:50px;border-radius:50%;background:var(--verde-suave);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--verde)">'+iniciales+'</div>') +
       '<div><p style="font-weight:700;font-size:0.9rem">'+m.nombre+'</p><p style="font-size:0.78rem;color:#888">'+m.cargo+' · '+m.area+'</p></div>' +
-      '</div><button class="btn-danger" onclick="eliminar(\'equipo\','+i+')">Eliminar</button></div>';
+      '</div><button class="btn-danger" onclick="eliminarEquipo('+i+')">Eliminar</button></div>';
   }).join('');
 }
 
-// ELIMINAR
-async function eliminar(coleccion, indice) {
-  if (!confirm('¿Eliminar este elemento?')) return;
-  var arr = await leer(coleccion);
-  arr.splice(indice, 1);
-  await guardar(coleccion, arr);
-  if (coleccion==='noticias') cargarNoticias();
-  else if (coleccion==='circulares') cargarCirculares();
-  else if (coleccion==='avisos') cargarAvisos();
-  else if (coleccion==='clasificados') cargarClasificados();
-  else if (coleccion==='galeria') cargarGaleria();
-  else if (coleccion==='equipo') cargarEquipo();
-}
+function eliminarEquipo(i) { if(confirm('¿Eliminar?')){ datos.equipo.splice(i,1); guardar(); renderEquipo(); } }
 </script>
 </body>
 </html>
