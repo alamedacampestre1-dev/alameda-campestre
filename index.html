@@ -2,20 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="B3IcGktFpA5FkQvTUndUYZxtXOfm4P479ld_bxLRvQ8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alameda Campestre PH - Conjunto Residencial</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --verde:#2D6A4F;--verde-claro:#74C69D;--verde-suave:#D8F3DC;
-      --tierra:#8B5E3C;--crema:#F9F5F0;--texto:#2C3E28;
-    }
+    :root{--verde:#2D6A4F;--verde-claro:#74C69D;--verde-suave:#D8F3DC;--tierra:#8B5E3C;--crema:#F9F5F0;--texto:#2C3E28}
     html{scroll-behavior:smooth}
     body{font-family:'Lato',sans-serif;color:var(--texto);background:var(--crema)}
-
-    /* NAV */
     nav{background:var(--verde);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
     .nav-logo{display:flex;align-items:center;gap:0.75rem}
     .nav-logo img{height:48px;width:auto}
@@ -25,85 +19,29 @@
     nav ul a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:0.85rem;letter-spacing:0.5px;transition:color 0.2s}
     nav ul a:hover{color:#fff}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-    .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s}
-
-    /* AVISO */
+    .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px}
     .avisos-strip{background:var(--tierra);padding:0.6rem 2rem;display:flex;align-items:center;gap:1rem;overflow:hidden}
     .avisos-strip .tag{background:rgba(255,255,255,0.2);color:#fff;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;white-space:nowrap}
     .aviso-scroll{color:rgba(255,255,255,0.92);font-size:0.85rem;white-space:nowrap;animation:scroll-text 30s linear infinite}
     @keyframes scroll-text{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-
-    /* HERO */
     .hero{background:linear-gradient(135deg,#1B4332 0%,#2D6A4F 60%,#40916C 100%);padding:5rem 2rem;text-align:center;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:url("foto_conjunto.jpg") center center/cover no-repeat;opacity:0.22}
-    .hero-logo{margin:0 auto 1.5rem;position:relative}
-    .hero-logo img{height:90px;width:auto;filter:brightness(0) invert(1) opacity(0.9)}
     .hero h1{font-family:'Playfair Display',serif;color:#fff;font-size:2.8rem;font-weight:600;margin-bottom:0.4rem;position:relative}
     .hero .sub{color:var(--verde-claro);font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:1.5rem;position:relative}
     .hero p{color:rgba(255,255,255,0.8);max-width:520px;margin:0 auto 2rem;font-size:1rem;line-height:1.7;position:relative}
     .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
-    .btn{display:inline-block;background:var(--verde-claro);color:#1B4332;padding:0.75rem 2rem;border-radius:2px;text-decoration:none;font-weight:700;font-size:0.9rem;letter-spacing:0.5px;transition:all 0.2s}
+    .btn{display:inline-block;background:var(--verde-claro);color:#1B4332;padding:0.75rem 2rem;border-radius:2px;text-decoration:none;font-weight:700;font-size:0.9rem;transition:all 0.2s}
     .btn:hover{background:#fff;color:var(--verde)}
     .btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,0.5);color:#fff}
-    .btn-outline:hover{background:rgba(255,255,255,0.1);color:#fff}
-
-    /* SECCIONES */
     .section{padding:3.5rem 2rem;max-width:980px;margin:0 auto}
     .section-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--verde);margin-bottom:0.5rem}
     .section-line{width:50px;height:3px;background:var(--verde-claro);margin-bottom:2rem;border-radius:2px}
-
-    /* SERVICIOS */
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
-    .card{background:#fff;border-radius:4px;padding:1.5rem;border:0.5px solid #e0dbd5;transition:all 0.2s;cursor:default}
+    .card{background:#fff;border-radius:4px;padding:1.5rem;border:0.5px solid #e0dbd5;transition:all 0.2s}
     .card:hover{border-color:var(--verde-claro);transform:translateY(-2px)}
     .card-icon{width:42px;height:42px;border-radius:4px;background:var(--verde-suave);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.2rem}
     .card h3{font-size:0.95rem;font-weight:700;color:var(--verde);margin-bottom:0.4rem}
     .card p{font-size:0.82rem;color:#666;line-height:1.5}
-
-    /* NOTICIAS */
-    .noticias-bg{background:#fff;padding:3rem 2rem}
-    .noticias-inner{max-width:980px;margin:0 auto}
-    .noticias-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:2rem}
-    .noticia-card{background:var(--crema);border-radius:4px;border:0.5px solid #e0dbd5;overflow:hidden;transition:all 0.2s}
-    .noticia-card:hover{transform:translateY(-3px);border-color:var(--verde-claro)}
-    .noticia-card.destacada{border:1.5px solid #c8a84b;position:relative}
-    .badge-nuevo{position:absolute;top:-10px;right:1rem;background:#c0392b;color:#fff;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px}
-    .noticia-header{padding:1.25rem 1.25rem 0}
-    .noticia-tag{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;margin-bottom:0.75rem}
-    .tag-evento{background:#FFF3E0;color:#8B5E3C}
-    .tag-espiritual{background:#F3E5F5;color:#6A1B9A}
-    .tag-admin{background:var(--verde-suave);color:var(--verde)}
-    .noticia-fecha-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
-    .fecha-box{background:var(--verde-suave);border-radius:3px;padding:0.4rem 0.6rem;text-align:center;min-width:48px}
-    .fecha-box .dia{font-size:1.3rem;font-weight:700;color:var(--verde);line-height:1}
-    .fecha-box .mes{font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--verde)}
-    .noticia-card h3{font-size:1rem;font-weight:700;color:var(--texto);margin-bottom:0.5rem;line-height:1.3}
-    .noticia-card .noticia-desc{font-size:0.82rem;color:#666;line-height:1.6;padding:0 1.25rem}
-    .noticia-info{display:flex;gap:1rem;padding:1rem 1.25rem;border-top:0.5px solid #e8e4de;margin-top:1rem;flex-wrap:wrap}
-    .info-item{display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:#777}
-    .info-item strong{color:var(--verde);font-size:0.8rem}
-    .lista-noticias{background:var(--crema);border-radius:4px;border:0.5px solid #e0dbd5}
-    .noticia-item{display:flex;gap:1.25rem;padding:1.25rem;border-bottom:0.5px solid #f0ece8;align-items:flex-start}
-    .noticia-item:last-child{border-bottom:none}
-    .noticia-fechita{min-width:52px;text-align:center;background:var(--verde-suave);border-radius:3px;padding:0.5rem 0.25rem;flex-shrink:0}
-    .noticia-fechita .dia{font-size:1.3rem;font-weight:700;color:var(--verde);line-height:1}
-    .noticia-fechita .mes{font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--verde)}
-    .noticia-body h4{font-size:0.92rem;font-weight:700;color:var(--texto);margin-bottom:0.3rem}
-    .noticia-body p{font-size:0.8rem;color:#777;line-height:1.5}
-
-    /* ZONAS */
-    .zonas-bg{background:var(--verde-suave);padding:3rem 2rem}
-    .zonas-inner{max-width:980px;margin:0 auto}
-    .zonas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
-    .zona-card{background:#fff;border-radius:4px;padding:1.25rem;text-align:center;border:0.5px solid rgba(45,106,79,0.15);transition:all 0.2s}
-    .zona-card:hover{transform:translateY(-2px);border-color:var(--verde)}
-    .zona-ico{font-size:1.8rem;margin-bottom:0.6rem}
-    .zona-card h4{font-size:0.88rem;font-weight:700;color:var(--verde);margin-bottom:0.3rem}
-    .zona-card p{font-size:0.75rem;color:#888;margin-bottom:0.75rem}
-    .btn-res{display:block;margin-top:0.5rem;background:var(--verde);color:#fff;border-radius:2px;padding:0.4rem 0;font-size:0.75rem;text-align:center;text-decoration:none;font-weight:700;letter-spacing:0.5px;transition:background 0.2s}
-    .btn-res:hover{background:var(--tierra)}
-
-    /* PAGOS */
     .pagos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-bottom:1.5rem}
     .pago-card{background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.5rem;transition:all 0.2s}
     .pago-card:hover{border-color:var(--verde-claro);transform:translateY(-2px)}
@@ -112,73 +50,44 @@
     .pago-ico{width:44px;height:44px;background:var(--verde-suave);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem}
     .pago-card h3{font-size:0.95rem;font-weight:700;color:var(--verde);margin-bottom:0.5rem}
     .pago-card p{font-size:0.82rem;color:#666;line-height:1.7}
-    .pago-card strong{color:var(--texto)}
-    .btn-pago{display:inline-block;background:var(--verde);color:#fff;padding:0.5rem 1.1rem;border-radius:3px;text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.5px;transition:background 0.2s;margin-top:0.5rem}
-    .btn-pago:hover{background:var(--tierra)}
+    .btn-pago{display:inline-block;background:var(--verde);color:#fff;padding:0.5rem 1.1rem;border-radius:3px;text-decoration:none;font-size:0.8rem;font-weight:700;transition:background 0.2s;margin-top:0.5rem}
     .aviso-ref{background:#fff8f0;border-left:3px solid var(--tierra);border-radius:0 4px 4px 0;padding:1rem 1.25rem;margin-bottom:1rem}
     .aviso-ref p{font-size:0.85rem;color:var(--tierra);line-height:1.6}
     .aviso-pago{background:var(--verde-suave);border-left:3px solid var(--verde);border-radius:0 4px 4px 0;padding:1rem 1.25rem}
     .aviso-pago p{font-size:0.85rem;color:var(--verde);line-height:1.6}
-
-    /* CONTACTO */
     .contacto-bg{background:var(--verde);padding:3rem 2rem}
     .contacto-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
     .contacto-bg h2{font-family:'Playfair Display',serif;color:#fff;font-size:1.8rem;margin-bottom:0.5rem}
     .linea{width:40px;height:3px;background:var(--verde-claro);margin-bottom:1.5rem;border-radius:2px}
-    .admin-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.2);border-radius:3px;padding:0.5rem 0.75rem;margin-bottom:1.25rem}
-    .admin-badge .admin-label{color:rgba(255,255,255,0.55);font-size:0.7rem;display:block}
-    .admin-badge strong{color:#fff;font-size:0.9rem}
     .contact-item{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.1rem}
-    .contact-ico{min-width:36px;height:36px;background:rgba(255,255,255,0.12);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+    .contact-ico{min-width:36px;height:36px;background:rgba(255,255,255,0.12);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.9rem}
     .contact-txt p{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-bottom:0.1rem}
     .contact-txt strong{color:#fff;font-size:0.88rem}
     .horario-box{background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.15);border-radius:4px;padding:1.25rem;margin-top:1rem}
     .horario-box h4{color:var(--verde-claro);font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.75rem}
-    .horario-row{display:flex;justify-content:space-between;align-items:flex-start;padding:0.45rem 0;border-bottom:0.5px solid rgba(255,255,255,0.08);gap:0.5rem}
+    .horario-row{display:flex;justify-content:space-between;padding:0.45rem 0;border-bottom:0.5px solid rgba(255,255,255,0.08)}
     .horario-row:last-child{border-bottom:none}
     .horario-dia{color:rgba(255,255,255,0.7);font-size:0.8rem;min-width:80px}
-    .horario-hora{color:#fff;font-size:0.8rem;text-align:right;line-height:1.4}
-    .horario-hora .atencion{display:block;color:var(--verde-claro);font-size:0.72rem;margin-top:0.15rem}
+    .horario-hora{color:#fff;font-size:0.8rem;text-align:right}
     .cerrado{color:rgba(255,255,255,0.35);font-size:0.8rem;font-style:italic}
     .form-pqr{background:rgba(255,255,255,0.08);border-radius:4px;padding:1.5rem;border:0.5px solid rgba(255,255,255,0.15)}
     .form-pqr h3{color:#fff;font-size:1rem;margin-bottom:1rem;font-weight:700}
     .form-pqr input,.form-pqr select,.form-pqr textarea{width:100%;background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.25);border-radius:3px;color:#fff;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:'Lato',sans-serif;outline:none}
-    .form-pqr input::placeholder,.form-pqr textarea::placeholder{color:rgba(255,255,255,0.45)}
     .form-pqr select option{background:#2D6A4F;color:#fff}
     .form-pqr textarea{height:80px;resize:none}
-    .btn-send{background:var(--verde-claro);color:#1B4332;border:none;width:100%;padding:0.65rem;border-radius:3px;font-weight:700;font-size:0.9rem;cursor:pointer;letter-spacing:0.5px;transition:background 0.2s;font-family:'Lato',sans-serif}
-    .btn-send:hover{background:#fff}
-
-    /* FOOTER */
+    .btn-send{background:var(--verde-claro);color:#1B4332;border:none;width:100%;padding:0.65rem;border-radius:3px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:'Lato',sans-serif}
     footer{background:#1B4332;padding:2rem;text-align:center}
     footer img{height:50px;width:auto;margin-bottom:0.75rem;opacity:0.7}
     footer p{color:rgba(255,255,255,0.5);font-size:0.78rem;line-height:1.7}
     footer strong{color:var(--verde-claro)}
-
-    /* RESPONSIVE */
-    @media(max-width:768px){
-      nav ul{display:none;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--verde);padding:1rem 2rem;gap:1rem;border-top:1px solid rgba(255,255,255,0.1)}
-      nav ul.open{display:flex}
-      .hamburger{display:flex}
-      .hero h1{font-size:2rem}
-      .contacto-inner{grid-template-columns:1fr}
-    }
-    @media(max-width:480px){
-      .hero{padding:3rem 1.5rem}
-      .section{padding:2.5rem 1.5rem}
-    }
+    @media(max-width:768px){nav ul{display:none;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--verde);padding:1rem 2rem;gap:1rem;border-top:1px solid rgba(255,255,255,0.1)}nav ul.open{display:flex}.hamburger{display:flex}.hero h1{font-size:2rem}.contacto-inner{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-
-<!-- NAVEGACIÓN -->
 <nav>
   <div class="nav-logo">
-    <img src="logo_alameda.png" alt="Logo Alameda Campestre" onerror="this.style.display='none'">
-    <div class="nav-logo-texto">
-      Alameda Campestre
-      <span>Conjunto Residencial · PH</span>
-    </div>
+    <img src="logo_alameda.png" alt="Logo" onerror="this.style.display='none'">
+    <div class="nav-logo-texto">Alameda Campestre<span>Conjunto Residencial · PH</span></div>
   </div>
   <ul id="nav-menu">
     <li><a href="#inicio">Inicio</a></li>
@@ -193,974 +102,243 @@
     <li><a href="#clasificados">Clasificados</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
-  <div class="hamburger" onclick="document.getElementById('nav-menu').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="hamburger" onclick="document.getElementById('nav-menu').classList.toggle('open')"><span></span><span></span><span></span></div>
 </nav>
-
-<!-- AVISO IMPORTANTE -->
 <div class="avisos-strip">
   <span class="tag">📢 Aviso</span>
-  <div class="aviso-scroll">
-    Eucaristía comunitaria — Sábado 30 de mayo · 6:00 PM · Plazoleta &nbsp;|&nbsp; Celebración Día de la Madre — 30 de mayo · 7:00 PM · Plazoleta con canelazo y mariachis &nbsp;|&nbsp; Pago de administración con descuento del 1 al 15 de cada mes
-  </div>
+  <div class="aviso-scroll">Pago de administración con descuento del 1 al 15 de cada mes &nbsp;|&nbsp; Para reservas de zonas comunes escriba a alamedacampestre1@gmail.com</div>
 </div>
-
-<!-- HERO -->
 <div class="hero" id="inicio">
-
   <h1>Alameda Campestre PH</h1>
   <p class="sub">Conjunto Residencial · Bogotá</p>
-  <p>Conjunto de 4 torres, 192 apartamentos y 3 niveles de parqueadero. Un espacio para vivir con tranquilidad, seguridad y comunidad. Aquí encontrarás toda la información de tu hogar.</p>
+  <p>Conjunto de 4 torres, 192 apartamentos y 3 niveles de parqueadero. Un espacio para vivir con tranquilidad, seguridad y comunidad.</p>
   <div class="hero-btns">
     <a href="#contacto" class="btn">Enviar PQR</a>
     <a href="#noticias" class="btn btn-outline">Ver noticias</a>
   </div>
 </div>
-
-<!-- FOTO CONJUNTO -->
 <div style="width:100%;height:420px;overflow:hidden;position:relative">
-  <img src="foto_conjunto.jpg" alt="Conjunto Residencial Alameda Campestre PH" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
+  <img src="foto_conjunto.jpg" alt="Conjunto" style="width:100%;height:100%;object-fit:cover;object-position:center 40%">
   <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(27,67,50,0.7));padding:1.5rem 2rem">
-    <p style="color:#fff;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;margin:0">AK 19 No. 170-85 · Bogotá, Colombia</p>
+    <p style="color:#fff;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;margin:0">Cra 15 #170-65 · Bogotá, Colombia</p>
   </div>
 </div>
-
-<!-- SERVICIOS -->
 <div class="section" id="servicios">
   <div class="section-title">Servicios del conjunto</div>
   <div class="section-line"></div>
   <div class="cards">
-    <div class="card">
-      <div class="card-icon">🔒</div>
-      <h3>Seguridad 24/7</h3>
-      <p>Personal de vigilancia y cámaras de circuito cerrado en todas las áreas comunes.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🌿</div>
-      <h3>Zonas verdes</h3>
-      <p>Amplias áreas paisajísticas y jardines mantenidos para el disfrute de todos.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🏊</div>
-      <h3>Piscina</h3>
-      <p>Piscina con horarios de uso para residentes, sujeta a reglamento de seguridad.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🏛️</div>
-      <h3>Salón comunal</h3>
-      <p>Espacio disponible para eventos privados, reservable con anticipación.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🚗</div>
-      <h3>Parqueaderos</h3>
-      <p>204 garajes para residentes y 27 para visitantes en 3 niveles: Sótano -1, Sótano Intermedio y Sótano -2.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">📋</div>
-      <h3>Administración</h3>
-      <p>Oficina de atención al residente con horarios especiales. Ver sección contacto.</p>
-    </div>
+    <div class="card"><div class="card-icon">🔒</div><h3>Seguridad 24/7</h3><p>Personal de vigilancia y cámaras de circuito cerrado en todas las áreas comunes.</p></div>
+    <div class="card"><div class="card-icon">🌿</div><h3>Zonas verdes</h3><p>Amplias áreas paisajísticas y jardines mantenidos para el disfrute de todos.</p></div>
+    <div class="card"><div class="card-icon">🏊</div><h3>Piscina</h3><p>Piscina cubierta con horarios de uso para residentes.</p></div>
+    <div class="card"><div class="card-icon">🏛️</div><h3>Salón comunal</h3><p>Espacio disponible para eventos privados, reservable con anticipación.</p></div>
+    <div class="card"><div class="card-icon">🚗</div><h3>Parqueaderos</h3><p>204 garajes residentes y 27 visitantes en 3 niveles.</p></div>
+    <div class="card"><div class="card-icon">📋</div><h3>Administración</h3><p>Oficina de atención al residente con horarios especiales.</p></div>
   </div>
 </div>
-
-<!-- NOTICIAS -->
-<div class="noticias-bg" id="noticias">
-  <div class="noticias-inner">
+<div style="background:#fff;padding:3rem 2rem" id="noticias">
+  <div style="max-width:980px;margin:0 auto">
     <div class="section-title">Noticias y comunicados</div>
     <div class="section-line"></div>
-
-    <div class="noticias-grid">
-      <div class="noticia-card destacada">
-        <div class="badge-nuevo">Hoy</div>
-        <div class="noticia-header">
-          <span class="noticia-tag tag-espiritual">✝ Circular informativa</span>
-          <div class="noticia-fecha-row">
-            <div class="fecha-box"><div class="dia">30</div><div class="mes">May</div></div>
-            <h3>Eucaristía comunitaria</h3>
-          </div>
-        </div>
-        <p class="noticia-desc">Se invita cordialmente a toda la comunidad a participar de la Santa Eucaristía. Será un espacio especial de unión, reflexión y encuentro para compartir en comunidad. ¡Te esperamos!</p>
-        <div class="noticia-info">
-          <div class="info-item">📍 <strong>Plazoleta</strong></div>
-          <div class="info-item">🕕 <strong>6:00 p.m.</strong></div>
-        </div>
+    <div style="background:var(--crema);border-radius:4px;border:0.5px solid #e0dbd5">
+      <div style="display:flex;gap:1.25rem;padding:1.25rem;border-bottom:0.5px solid #f0ece8;align-items:flex-start">
+        <div style="min-width:52px;text-align:center;background:var(--verde-suave);border-radius:3px;padding:0.5rem 0.25rem"><div style="font-size:1.3rem;font-weight:700;color:var(--verde);line-height:1">01</div><div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--verde)">May</div></div>
+        <div><h4 style="font-size:0.92rem;font-weight:700;color:var(--texto);margin-bottom:0.3rem">Pago de administración con descuento</h4><p style="font-size:0.8rem;color:#777;line-height:1.5">Los pagos del 1 al 15 de cada mes aplican descuento. Use su número de apartamento como referencia. Banco Caja Social · Cta Cte 21004132348.</p></div>
       </div>
-
-      <div class="noticia-card destacada">
-        <div class="badge-nuevo">Hoy</div>
-        <div class="noticia-header">
-          <span class="noticia-tag tag-evento">🌸 Celebración</span>
-          <div class="noticia-fecha-row">
-            <div class="fecha-box"><div class="dia">30</div><div class="mes">May</div></div>
-            <h3>Celebración Día de la Madre</h3>
-          </div>
-        </div>
-        <p class="noticia-desc">Invitamos a todas las madres y familias a compartir una noche especial en homenaje a esas mujeres maravillosas. Habrá canelazo y presentación de mariachis. ¡Música, unión y gratitud!</p>
-        <div class="noticia-info">
-          <div class="info-item">📍 <strong>Plazoleta</strong></div>
-          <div class="info-item">🕖 <strong>7:00 p.m.</strong></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="lista-noticias">
-      <div class="noticia-item">
-        <div class="noticia-fechita"><div class="dia">01</div><div class="mes">May</div></div>
-        <div class="noticia-body">
-          <h4>Pago de administración con descuento</h4>
-          <p>Recuerde que los pagos realizados del 1 al 15 de cada mes aplican descuento. Utilice solo su número de apartamento como referencia. Banco Caja Social · Cta Cte 21004132348.</p>
-        </div>
-      </div>
-      <div class="noticia-item">
-        <div class="noticia-fechita"><div class="dia">28</div><div class="mes">Abr</div></div>
-        <div class="noticia-body">
-          <h4>Reglamentación de mascotas en zonas comunes</h4>
-          <p>Las mascotas deben transitar con correa y bozal en todas las zonas comunes. El incumplimiento generará llamado de atención formal según el reglamento de copropiedad.</p>
-        </div>
+      <div style="display:flex;gap:1.25rem;padding:1.25rem;align-items:flex-start">
+        <div style="min-width:52px;text-align:center;background:var(--verde-suave);border-radius:3px;padding:0.5rem 0.25rem"><div style="font-size:1.3rem;font-weight:700;color:var(--verde);line-height:1">28</div><div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--verde)">Abr</div></div>
+        <div><h4 style="font-size:0.92rem;font-weight:700;color:var(--texto);margin-bottom:0.3rem">Reglamentación de mascotas</h4><p style="font-size:0.8rem;color:#777;line-height:1.5">Las mascotas deben transitar con correa y bozal en todas las zonas comunes.</p></div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- ZONAS COMUNES -->
-<div class="zonas-bg" id="zonas">
-  <div class="zonas-inner">
+<div style="background:var(--verde-suave);padding:3rem 2rem" id="zonas">
+  <div style="max-width:980px;margin:0 auto">
     <div class="section-title">Reserva de zonas comunes</div>
     <div class="section-line"></div>
-    <div class="zonas-grid">
-      <div class="zona-card">
-        <div class="zona-ico">🏛️</div>
-        <h4>Salón social</h4>
-        <p>Reserva con 15 días de anticipación · 10 AM – 1 AM</p>
-        <a href="#contacto" class="btn-res">Reservar</a>
-      </div>
-      <div class="zona-card">
-        <div class="zona-ico">🏊</div>
-        <h4>Piscina</h4>
-        <p>Máx. 10 personas · 60 min por persona</p>
-        <a href="#contacto" class="btn-res">Reservar</a>
-      </div>
-      <div class="zona-card">
-        <div class="zona-ico">🧖</div>
-        <h4>Sauna y turco</h4>
-        <p>Máx. 5 personas c/u · 60 min por zona</p>
-        <a href="#contacto" class="btn-res">Reservar</a>
-      </div>
-      <div class="zona-card">
-        <div class="zona-ico">🏋️</div>
-        <h4>Gimnasio</h4>
-        <p>Exclusivo residentes · Llaves en portería</p>
-        <a href="#contacto" class="btn-res">Reservar</a>
-      </div>
-      <div class="zona-card">
-        <div class="zona-ico">⚽</div>
-        <h4>Cancha</h4>
-        <p>Fútbol y voleibol · Máx. 1 hora por grupo</p>
-        <a href="#contacto" class="btn-res">Reservar</a>
-      </div>
-    </div>
-    <div style="background:rgba(45,106,79,0.1);border-left:3px solid var(--verde);border-radius:0 4px 4px 0;padding:1rem 1.25rem;margin-top:1.5rem">
-      <p style="font-size:0.85rem;color:var(--verde);line-height:1.6">📌 <strong>Requisito:</strong> Para usar zonas comunes debe estar a paz y salvo en cuotas de administración. El propietario o residente debe estar presente cuando tenga invitados. Solicite reservas al correo <strong>alamedacampestre1@gmail.com</strong></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem">
+      <div style="background:#fff;border-radius:4px;padding:1.25rem;text-align:center;border:0.5px solid rgba(45,106,79,0.15)"><div style="font-size:1.8rem;margin-bottom:0.6rem">🏛️</div><h4 style="font-size:0.88rem;font-weight:700;color:var(--verde);margin-bottom:0.3rem">Salón social</h4><p style="font-size:0.75rem;color:#888;margin-bottom:0.75rem">15 días anticipación · 10AM–1AM</p><a href="#contacto" style="display:block;background:var(--verde);color:#fff;border-radius:2px;padding:0.4rem 0;font-size:0.75rem;text-align:center;text-decoration:none;font-weight:700">Reservar</a></div>
+      <div style="background:#fff;border-radius:4px;padding:1.25rem;text-align:center;border:0.5px solid rgba(45,106,79,0.15)"><div style="font-size:1.8rem;margin-bottom:0.6rem">🏊</div><h4 style="font-size:0.88rem;font-weight:700;color:var(--verde);margin-bottom:0.3rem">Piscina</h4><p style="font-size:0.75rem;color:#888;margin-bottom:0.75rem">Máx. 10 personas · 60 min</p><a href="#contacto" style="display:block;background:var(--verde);color:#fff;border-radius:2px;padding:0.4rem 0;font-size:0.75rem;text-align:center;text-decoration:none;font-weight:700">Reservar</a></div>
+      <div style="background:#fff;border-radius:4px;padding:1.25rem;text-align:center;border:0.5px solid rgba(45,106,79,0.15)"><div style="font-size:1.8rem;margin-bottom:0.6rem">🧖</div><h4 style="font-size:0.88rem;font-weight:700;color:var(--verde);margin-bottom:0.3rem">Sauna y turco</h4><p style="font-size:0.75rem;color:#888;margin-bottom:0.75rem">Máx. 5 personas · 60 min</p><a href="#contacto" style="display:block;background:var(--verde);color:#fff;border-radius:2px;padding:0.4rem 0;font-size:0.75rem;text-align:center;text-decoration:none;font-weight:700">Reservar</a></div>
+      <div style="background:#fff;border-radius:4px;padding:1.25rem;text-align:center;border:0.5px solid rgba(45,106,79,0.15)"><div style="font-size:1.8rem;margin-bottom:0.6rem">🏋️</div><h4 style="font-size:0.88rem;font-weight:700;color:var(--verde);margin-bottom:0.3rem">Gimnasio</h4><p style="font-size:0.75rem;color:#888;margin-bottom:0.75rem">Exclusivo residentes</p><a href="#contacto" style="display:block;background:var(--verde);color:#fff;border-radius:2px;padding:0.4rem 0;font-size:0.75rem;text-align:center;text-decoration:none;font-weight:700">Reservar</a></div>
+      <div style="background:#fff;border-radius:4px;padding:1.25rem;text-align:center;border:0.5px solid rgba(45,106,79,0.15)"><div style="font-size:1.8rem;margin-bottom:0.6rem">⚽</div><h4 style="font-size:0.88rem;font-weight:700;color:var(--verde);margin-bottom:0.3rem">Cancha</h4><p style="font-size:0.75rem;color:#888;margin-bottom:0.75rem">Fútbol y voleibol · 1 hora</p><a href="#contacto" style="display:block;background:var(--verde);color:#fff;border-radius:2px;padding:0.4rem 0;font-size:0.75rem;text-align:center;text-decoration:none;font-weight:700">Reservar</a></div>
     </div>
   </div>
 </div>
-
-<!-- PAGOS -->
 <div class="section" id="pagos">
   <div class="section-title">Información de pagos</div>
   <div class="section-line"></div>
-
   <div class="pagos-grid">
-    <div class="pago-card destacado">
-      <div class="badge-rec">Recomendado</div>
-      <div class="pago-ico">💻</div>
-      <h3>Pago en línea — MiPagoAmigo</h3>
-      <p>Pague su cuota de administración en línea a través del portal del <strong>Banco Caja Social</strong>, sin filas y desde casa. Busque <strong>"Alameda Campestre"</strong> en la categoría <em>Conjuntos Residenciales</em>.</p>
-      <a href="https://www.mipagoamigo.com/MPA_WebSite/ServicePayments/StartPayment" target="_blank" class="btn-pago">Ir a MiPagoAmigo →</a>
-    </div>
-
-    <div class="pago-card">
-      <div class="pago-ico">🏦</div>
-      <h3>Consignación bancaria</h3>
-      <p>
-        <strong>Banco:</strong> Banco Caja Social<br>
-        <strong>Tipo:</strong> Cuenta Corriente<br>
-        <strong>Número:</strong> 21004132348<br>
-        <strong>Titular:</strong> Cj. Res. Alameda Campestre<br>
-        <strong>NIT:</strong> 900.138.707-7<br>
-        <strong>Referencia:</strong> Número de apartamento
-      </p>
-    </div>
-
-    <div class="pago-card">
-      <div class="pago-ico">📅</div>
-      <h3>Fecha límite con descuento</h3>
-      <p>Los pagos realizados del <strong>1 al 15 de cada mes</strong> aplican descuento. Después del día 15 no aplica descuento y pueden generarse intereses de mora según el reglamento de copropiedad.</p>
-    </div>
+    <div class="pago-card destacado"><div class="badge-rec">Recomendado</div><div class="pago-ico">💻</div><h3>Pago en línea — MiPagoAmigo</h3><p>Busque <strong>"Alameda Campestre"</strong> en la categoría <em>Conjuntos Residenciales</em> del Banco Caja Social.</p><a href="https://www.mipagoamigo.com/MPA_WebSite/ServicePayments/StartPayment" target="_blank" class="btn-pago">Ir a MiPagoAmigo →</a></div>
+    <div class="pago-card"><div class="pago-ico">🏦</div><h3>Consignación bancaria</h3><p><strong>Banco:</strong> Banco Caja Social<br><strong>Cuenta Corriente:</strong> 21004132348<br><strong>NIT:</strong> 900.138.707-7<br><strong>Referencia:</strong> Número de apartamento</p></div>
+    <div class="pago-card"><div class="pago-ico">📅</div><h3>Fecha con descuento</h3><p>Pagos del <strong>1 al 15 de cada mes</strong> aplican descuento. Después del día 15 pueden generarse intereses de mora.</p></div>
   </div>
-
-  <div class="aviso-ref">
-    <p>📌 <strong>Importante:</strong> Al realizar su pago, coloque únicamente el <strong>número de su apartamento</strong> como referencia de pago.</p>
-  </div>
+  <div class="aviso-ref"><p>📌 <strong>Importante:</strong> Use únicamente el <strong>número de su apartamento</strong> como referencia.</p></div>
   <br>
-  <div class="aviso-pago">
-    <p>📧 <strong>Envío de comprobantes:</strong> Una vez realizado el pago, envíe su soporte al correo <strong>alamedacampestre1@gmail.com</strong> indicando su nombre, apartamento y mes de pago.</p>
-  </div>
+  <div class="aviso-pago"><p>📧 Envíe su comprobante a <strong>alamedacampestre1@gmail.com</strong> indicando nombre, apartamento y mes.</p></div>
 </div>
-
-<!-- RESIDENTES -->
 <div style="background:var(--verde-suave);padding:3rem 2rem" id="residentes">
   <div style="max-width:980px;margin:0 auto">
     <div class="section-title">Actualización de datos</div>
     <div class="section-line"></div>
-    <p style="font-size:0.9rem;color:#555;margin-bottom:2rem;line-height:1.7">Mantenga sus datos actualizados para que la administración pueda contactarle oportunamente. Complete el formulario y la administración procesará su solicitud.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
-
-      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:2rem">
-        <h3 style="font-size:1rem;font-weight:700;color:var(--verde);margin-bottom:1.5rem">📋 Datos del residente</h3>
-
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Número de apartamento *</label>
-        <input type="text" id="r_apto" placeholder="Ej: Apto 301" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Nombre completo *</label>
-        <input type="text" id="r_nombre" placeholder="Nombre y apellidos" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Número de cédula *</label>
-        <input type="text" id="r_cedula" placeholder="Número de identificación" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Condición en el conjunto *</label>
-        <select id="r_condicion" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif;background:#fff">
-          <option value="">Seleccione...</option>
-          <option>Propietario</option>
-          <option>Arrendatario</option>
-          <option>Familiar del propietario</option>
-        </select>
-
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Teléfono celular *</label>
-        <input type="tel" id="r_telefono" placeholder="300 000 0000" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Correo electrónico *</label>
-        <input type="email" id="r_email" placeholder="correo@ejemplo.com" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-      </div>
-
-      <div>
-        <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:2rem;margin-bottom:1.25rem">
-          <h3 style="font-size:1rem;font-weight:700;color:var(--verde);margin-bottom:1.5rem">🚗 Vehículos</h3>
-
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Placa del vehículo</label>
-          <input type="text" id="r_placa" placeholder="Ej: ABC123" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Marca y color</label>
-          <input type="text" id="r_vehiculo" placeholder="Ej: Renault Sandero rojo" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-        </div>
-
-        <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:2rem;margin-bottom:1.25rem">
-          <h3 style="font-size:1rem;font-weight:700;color:var(--verde);margin-bottom:1.5rem">🐾 Mascotas</h3>
-
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Nombre y raza</label>
-          <input type="text" id="r_mascota" placeholder="Ej: Max - Labrador" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">¿Tiene certificado de vacunación?</label>
-          <select id="r_vacuna" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif;background:#fff">
-            <option value="">Seleccione...</option>
-            <option>Sí, está al día</option>
-            <option>No tengo mascotas</option>
-            <option>Pendiente por actualizar</option>
-          </select>
-        </div>
-
-        <button onclick="enviarDatos()" style="width:100%;background:var(--verde);color:#fff;border:none;padding:0.85rem;border-radius:3px;font-weight:700;font-size:0.95rem;cursor:pointer;letter-spacing:0.5px;font-family:Lato,sans-serif;transition:background 0.2s">Enviar actualización de datos</button>
-      </div>
-
+    <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:2rem;max-width:500px">
+      <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Apartamento *</label>
+      <input type="text" id="r_apto" placeholder="Ej: Apto 301" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
+      <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Nombre completo *</label>
+      <input type="text" id="r_nombre" placeholder="Nombre y apellidos" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
+      <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Teléfono *</label>
+      <input type="tel" id="r_telefono" placeholder="300 000 0000" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
+      <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Correo electrónico *</label>
+      <input type="email" id="r_email" placeholder="correo@ejemplo.com" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
+      <button onclick="enviarDatos()" style="width:100%;background:var(--verde);color:#fff;border:none;padding:0.85rem;border-radius:3px;font-weight:700;font-size:0.95rem;cursor:pointer;font-family:Lato,sans-serif">Enviar actualización</button>
     </div>
   </div>
 </div>
-
 <script>
-function enviarDatos() {
-  var apto = document.getElementById('r_apto').value;
-  var nombre = document.getElementById('r_nombre').value;
-  var cedula = document.getElementById('r_cedula').value;
-  var condicion = document.getElementById('r_condicion').value;
-  var telefono = document.getElementById('r_telefono').value;
-  var email = document.getElementById('r_email').value;
-
-  if (!apto || !nombre || !cedula || !condicion || !telefono || !email) {
-    alert('Por favor complete todos los campos obligatorios (*)');
-    return;
-  }
-
-  var placa = document.getElementById('r_placa').value;
-  var vehiculo = document.getElementById('r_vehiculo').value;
-  var mascota = document.getElementById('r_mascota').value;
-  var vacuna = document.getElementById('r_vacuna').value;
-
-  var cuerpo = 'ACTUALIZACIÓN DE DATOS - RESIDENTE\n\n';
-  cuerpo += 'Apartamento: ' + apto + '\n';
-  cuerpo += 'Nombre: ' + nombre + '\n';
-  cuerpo += 'Cédula: ' + cedula + '\n';
-  cuerpo += 'Condición: ' + condicion + '\n';
-  cuerpo += 'Teléfono: ' + telefono + '\n';
-  cuerpo += 'Correo: ' + email + '\n';
-  if (placa) cuerpo += 'Vehículo: ' + placa + ' - ' + vehiculo + '\n';
-  if (mascota) cuerpo += 'Mascota: ' + mascota + ' - Vacuna: ' + vacuna + '\n';
-
-  var mailto = 'mailto:alamedacampestre1@gmail.com?subject=Actualización de datos - Apto ' + encodeURIComponent(apto) + '&body=' + encodeURIComponent(cuerpo);
-  window.location.href = mailto;
-}
+function enviarDatos(){var a=document.getElementById('r_apto').value,n=document.getElementById('r_nombre').value,t=document.getElementById('r_telefono').value,e=document.getElementById('r_email').value;if(!a||!n||!t||!e){alert('Complete todos los campos');return;}window.location.href='mailto:alamedacampestre1@gmail.com?subject=Actualización datos - Apto '+encodeURIComponent(a)+'&body='+encodeURIComponent('Apto: '+a+'\nNombre: '+n+'\nTel: '+t+'\nCorreo: '+e);}
 </script>
-
-<!-- FICHA TÉCNICA -->
 <div style="background:var(--crema);padding:3rem 2rem" id="conjunto">
   <div style="max-width:980px;margin:0 auto">
     <div class="section-title">Nuestro conjunto</div>
     <div class="section-line"></div>
-
-    <div style="background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.5rem;margin-bottom:2rem">
-      <h3 style="font-size:0.95rem;font-weight:700;color:var(--verde);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:0.5px solid var(--verde-suave)">📋 Ficha técnica</h3>
+    <div style="background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.5rem">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Nombre</p><strong style="font-size:0.88rem;color:var(--texto)">Conjunto Residencial Alameda Campestre PH</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Dirección</p><strong style="font-size:0.88rem;color:var(--texto)">Cra 15 #170-65, Bogotá</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">NIT</p><strong style="font-size:0.88rem;color:var(--texto)">900.138.707-7</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Número de torres</p><strong style="font-size:0.88rem;color:var(--texto)">4 torres</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Apartamentos por piso</p><strong style="font-size:0.88rem;color:var(--texto)">4 apartamentos por piso</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Total apartamentos</p><strong style="font-size:0.88rem;color:var(--texto)">192 apartamentos</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Garajes residentes</p><strong style="font-size:0.88rem;color:var(--texto)">204 garajes · Sótano -1, Intermedio y -2</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Garajes visitantes</p><strong style="font-size:0.88rem;color:var(--texto)">27 garajes para visitantes</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Escritura pública</p><strong style="font-size:0.88rem;color:var(--texto)">N° 2554 · Notaría 35 · Bogotá · 2007</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Administradora</p><strong style="font-size:0.88rem;color:var(--texto)">Gladys Acosta Caro</strong></div>
-        <div><p style="font-size:0.75rem;color:#999;margin-bottom:0.1rem">Marco legal</p><strong style="font-size:0.88rem;color:var(--texto)">Ley 675 de 2001</strong></div>
+        <div><p style="font-size:0.75rem;color:#999">Nombre</p><strong style="font-size:0.88rem">Conjunto Residencial Alameda Campestre PH</strong></div>
+        <div><p style="font-size:0.75rem;color:#999">Dirección</p><strong style="font-size:0.88rem">Cra 15 #170-65, Bogotá</strong></div>
+        <div><p style="font-size:0.75rem;color:#999">NIT</p><strong style="font-size:0.88rem">900.138.707-7</strong></div>
+        <div><p style="font-size:0.75rem;color:#999">Torres</p><strong style="font-size:0.88rem">4 torres</strong></div>
+        <div><p style="font-size:0.75rem;color:#999">Apartamentos</p><strong style="font-size:0.88rem">192 apartamentos</strong></div>
+        <div><p style="font-size:0.75rem;color:#999">Garajes residentes</p><strong style="font-size:0.88rem">204 garajes</strong></div>
+        <div><p style="font-size:0.75rem;color:#999">Garajes visitantes</p><strong style="font-size:0.88rem">27 garajes</strong></div>
+        <div><p style="font-size:0.75rem;color:#999">Administradora</p><strong style="font-size:0.88rem">Gladys Acosta Caro</strong></div>
       </div>
-    </div>
-
-    <div class="section-title">Empresas proveedoras</div>
-    <div class="section-line"></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
-
-      <div style="background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem">
-        <div style="width:90px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden;background:#f8f8f8;padding:6px">
-          <img src="logo_cooviser.png" alt="Cooviser CTA" style="max-width:100%;max-height:100%;object-fit:contain">
-        </div>
-        <span style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;background:#E8F4FD;color:#1a5276">Vigilancia</span>
-        <div style="font-size:0.88rem;font-weight:700;color:var(--verde)">Cooviser CTA</div>
-        <div style="font-size:0.75rem;color:#888;line-height:1.4">Cooperativa Colombiana de Vigilancia Especializada · Seguridad 24/7</div>
-      </div>
-
-      <div style="background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem">
-        <div style="width:90px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden;background:#f8f8f8;padding:6px">
-          <img src="logo_soinser.png" alt="Soinser Ltda" style="max-width:100%;max-height:100%;object-fit:contain">
-        </div>
-        <span style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;background:var(--verde-suave);color:var(--verde)">Aseo y mantenimiento</span>
-        <div style="font-size:0.88rem;font-weight:700;color:var(--verde)">Soinser Ltda</div>
-        <div style="font-size:0.75rem;color:#888;line-height:1.4">Aseo, mantenimiento locativo, jardinería y control de plagas</div>
-      </div>
-
-      <div style="background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem">
-        <div style="width:90px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden;background:#111;padding:6px">
-          <img src="logo_pumpservice.png" alt="PumpService" style="max-width:100%;max-height:100%;object-fit:contain">
-        </div>
-        <span style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;background:#FEF9E7;color:#7d6608">Motobombas</span>
-        <div style="font-size:0.88rem;font-weight:700;color:var(--verde)">PumpService</div>
-        <div style="font-size:0.75rem;color:#888;line-height:1.4">Mantenimiento y operación de sistemas de bombeo</div>
-      </div>
-
-      <div style="background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem">
-        <div style="width:90px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden;background:#f8f8f8;padding:6px">
-          <img src="logo_piscinazul.png" alt="PiscinAzul" style="max-width:100%;max-height:100%;object-fit:contain">
-        </div>
-        <span style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;background:#EBF5FB;color:#1a5276">Piscina</span>
-        <div style="font-size:0.88rem;font-weight:700;color:var(--verde)">PiscinAzul Ingeniería SAS</div>
-        <div style="font-size:0.75rem;color:#888;line-height:1.4">Mantenimiento de piscina, sauna y turco · Tratamiento de aguas</div>
-      </div>
-
-      <div style="background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem">
-        <div style="width:90px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden;background:#f8f8f8;padding:6px">
-          <img src="logo_avexon.png" alt="Avexom Colombia SAS" style="max-width:100%;max-height:100%;object-fit:contain">
-        </div>
-        <span style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;background:#F9EBEA;color:#78281f">Eléctrico</span>
-        <div style="font-size:0.88rem;font-weight:700;color:var(--verde)">Avexom Colombia SAS</div>
-        <div style="font-size:0.75rem;color:#888;line-height:1.4">Pasión ambiental · Mantenimiento eléctrico y planta</div>
-      </div>
-
-      <div style="background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;padding:1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem">
-        <div style="width:90px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:6px;overflow:hidden;background:#0d1b3e;padding:8px">
-          <img src="logo_otis.png" alt="Otis" style="max-width:100%;max-height:100%;object-fit:contain">
-        </div>
-        <span style="display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;background:#F4ECF7;color:#6c3483">Ascensores</span>
-        <div style="font-size:0.88rem;font-weight:700;color:var(--verde)">Otis</div>
-        <div style="font-size:0.75rem;color:#888;line-height:1.4">Mantenimiento y operación de ascensores · Marca líder mundial</div>
-      </div>
-
-    </div>
-
-    <div style="background:var(--verde-suave);border-left:3px solid var(--verde);border-radius:0 4px 4px 0;padding:1rem 1.25rem;margin-top:1.5rem">
-      <p style="font-size:0.82rem;color:var(--verde);line-height:1.6">📌 Para requerimientos relacionados con estos servicios, comuníquese con administración: <strong>601 694 9075</strong> · <strong>alamedacampestre1@gmail.com</strong></p>
     </div>
   </div>
 </div>
-
-<!-- ORGANIGRAMA -->
-<div style="background:#fff;padding:3rem 2rem" id="organigrama">
-  <div style="max-width:980px;margin:0 auto">
-    <div class="section-title">Órganos de administración</div>
-    <div class="section-line"></div>
-    <div style="overflow-x:auto;background:var(--verde-suave);border-radius:8px;padding:1.5rem">
-      <svg width="100%" viewBox="0 0 900 680" role="img" style="min-width:700px">
-        <defs>
-          <marker id="arrowOrg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </marker>
-        </defs>
-
-        <!-- Nivel 1: Asamblea -->
-        <rect x="300" y="20" width="300" height="44" rx="22" fill="#2D6A4F" stroke="#2D6A4F" stroke-width="1.5"/>
-        <text font-family="Lato,sans-serif" font-size="14" font-weight="700" fill="#fff" x="450" y="46" text-anchor="middle" dominant-baseline="central">Asamblea general de propietarios</text>
-
-        <!-- Líneas nivel 1 → 2 -->
-        <line x1="390" y1="64" x2="170" y2="110" stroke="#2D6A4F" stroke-width="1" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="450" y1="64" x2="450" y2="110" stroke="#2D6A4F" stroke-width="1" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="510" y1="64" x2="730" y2="110" stroke="#2D6A4F" stroke-width="1" fill="none" marker-end="url(#arrowOrg)"/>
-
-        <!-- Nivel 2 -->
-        <rect x="60" y="110" width="220" height="40" rx="8" fill="#D8F3DC" stroke="#2D6A4F" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#1B4332" x="170" y="130" text-anchor="middle" dominant-baseline="central">Revisor fiscal</text>
-
-        <rect x="340" y="110" width="220" height="40" rx="8" fill="#2D6A4F" stroke="#2D6A4F" stroke-width="1"/>
-        <text font-family="Lato,sans-serif" font-size="13" font-weight="700" fill="#fff" x="450" y="130" text-anchor="middle" dominant-baseline="central">Consejo de administración</text>
-
-        <rect x="620" y="110" width="220" height="40" rx="8" fill="#D8F3DC" stroke="#2D6A4F" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#1B4332" x="730" y="130" text-anchor="middle" dominant-baseline="central">Comité de convivencia</text>
-
-        <!-- Nivel 2 → 3 -->
-        <line x1="450" y1="150" x2="450" y2="180" stroke="#2D6A4F" stroke-width="1" fill="none" marker-end="url(#arrowOrg)"/>
-
-        <!-- Nivel 3: Administración -->
-        <rect x="340" y="180" width="220" height="40" rx="8" fill="#40916C" stroke="#2D6A4F" stroke-width="1.5"/>
-        <text font-family="Lato,sans-serif" font-size="14" font-weight="700" fill="#fff" x="450" y="200" text-anchor="middle" dominant-baseline="central">Administración</text>
-
-        <!-- Nivel 3 → 4 -->
-        <line x1="390" y1="220" x2="110" y2="265" stroke="#5F5E5A" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="415" y1="220" x2="290" y2="265" stroke="#5F5E5A" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="450" y1="220" x2="450" y2="265" stroke="#5F5E5A" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="485" y1="220" x2="620" y2="265" stroke="#5F5E5A" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="510" y1="220" x2="790" y2="265" stroke="#5F5E5A" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-
-        <!-- Nivel 4 -->
-        <rect x="20" y="265" width="180" height="40" rx="6" fill="#fff" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#2C3E28" x="110" y="285" text-anchor="middle" dominant-baseline="central">Vigilancia</text>
-
-        <rect x="210" y="265" width="160" height="40" rx="6" fill="#fff" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#2C3E28" x="290" y="285" text-anchor="middle" dominant-baseline="central">Aseo general</text>
-
-        <rect x="360" y="265" width="180" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#173404" x="450" y="285" text-anchor="middle" dominant-baseline="central">Técnicos mantenimiento</text>
-
-        <rect x="550" y="265" width="140" height="40" rx="6" fill="#fff" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#2C3E28" x="620" y="285" text-anchor="middle" dominant-baseline="central">Contador</text>
-
-        <rect x="700" y="265" width="180" height="40" rx="6" fill="#fff" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#2C3E28" x="790" y="285" text-anchor="middle" dominant-baseline="central">Abogado cobranza</text>
-
-        <!-- Vigilancia → Toderos -->
-        <line x1="110" y1="305" x2="110" y2="340" stroke="#B4B2A9" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-        <rect x="20" y="340" width="180" height="40" rx="6" fill="#fff" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#2C3E28" x="110" y="360" text-anchor="middle" dominant-baseline="central">Toderos</text>
-
-        <!-- Aseo → Proveedores -->
-        <line x1="290" y1="305" x2="290" y2="340" stroke="#B4B2A9" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-        <rect x="210" y="340" width="160" height="40" rx="6" fill="#fff" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#2C3E28" x="290" y="360" text-anchor="middle" dominant-baseline="central">Proveedores</text>
-
-        <!-- Técnicos → sub niveles -->
-        <line x1="405" y1="305" x2="310" y2="410" stroke="#3B6D11" stroke-width="0.7" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="425" y1="305" x2="400" y2="410" stroke="#3B6D11" stroke-width="0.7" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="450" y1="305" x2="490" y2="410" stroke="#3B6D11" stroke-width="0.7" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="470" y1="305" x2="580" y2="410" stroke="#3B6D11" stroke-width="0.7" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="490" y1="305" x2="670" y2="410" stroke="#3B6D11" stroke-width="0.7" fill="none" marker-end="url(#arrowOrg)"/>
-
-        <!-- Nivel 5: Sub-técnicos -->
-        <rect x="250" y="410" width="140" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#173404" x="320" y="430" text-anchor="middle" dominant-baseline="central">Ascensores</text>
-
-        <rect x="400" y="410" width="140" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#173404" x="470" y="430" text-anchor="middle" dominant-baseline="central">Citofonía</text>
-
-        <rect x="550" y="410" width="140" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#173404" x="620" y="430" text-anchor="middle" dominant-baseline="central">Motobombas</text>
-
-        <rect x="700" y="410" width="140" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#173404" x="770" y="430" text-anchor="middle" dominant-baseline="central">CCTV</text>
-
-        <!-- Planta eléctrica debajo de Citofonía -->
-        <line x1="470" y1="450" x2="470" y2="480" stroke="#3B6D11" stroke-width="0.7" fill="none" marker-end="url(#arrowOrg)"/>
-        <rect x="390" y="480" width="160" height="40" rx="6" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#173404" x="470" y="500" text-anchor="middle" dominant-baseline="central">Planta eléctrica</text>
-
-        <!-- Nivel 6: Piscina y zonas -->
-        <line x1="450" y1="520" x2="450" y2="555" stroke="#2D6A4F" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-        <rect x="200" y="555" width="500" height="40" rx="20" fill="#D8F3DC" stroke="#2D6A4F" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#1B4332" x="450" y="575" text-anchor="middle" dominant-baseline="central">Piscina · Sauna · Turco · Zonas comunes</text>
-
-        <!-- Seguridad y contratistas -->
-        <line x1="330" y1="595" x2="250" y2="625" stroke="#2D6A4F" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-        <line x1="570" y1="595" x2="650" y2="625" stroke="#2D6A4F" stroke-width="0.8" fill="none" marker-end="url(#arrowOrg)"/>
-
-        <rect x="100" y="625" width="300" height="40" rx="20" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#173404" x="250" y="645" text-anchor="middle" dominant-baseline="central">Seguridad y salud en el trabajo</text>
-
-        <rect x="500" y="625" width="200" height="40" rx="20" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
-        <text font-family="Lato,sans-serif" font-size="13" fill="#173404" x="600" y="645" text-anchor="middle" dominant-baseline="central">Contratistas</text>
-
-      </svg>
-    </div>
-  </div>
-</div>
-
-<!-- DOCUMENTOS -->
 <div style="background:var(--crema);padding:3rem 2rem" id="documentos">
   <div style="max-width:980px;margin:0 auto">
     <div class="section-title">Documentos y reglamentos</div>
     <div class="section-line"></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem">
-
-      <a href="manual_convivencia_alameda.pdf" download style="text-decoration:none">
-        <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem;transition:all 0.2s;cursor:pointer" onmouseover="this.style.borderColor='#74C69D'" onmouseout="this.style.borderColor='#e0dbd5'">
-          <div style="min-width:40px;height:40px;background:var(--verde-suave);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">📄</div>
-          <div><p style="font-size:0.88rem;font-weight:700;color:var(--verde);margin:0">Manual de Convivencia</p><p style="font-size:0.75rem;color:#888;margin:0">Descarga disponible · PDF</p></div>
-        </div>
-      </a>
-
-      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem">
-        <div style="min-width:40px;height:40px;background:var(--verde-suave);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">🏊</div>
-        <div><p style="font-size:0.88rem;font-weight:700;color:var(--verde);margin:0">Reglamento de la Piscina</p><p style="font-size:0.75rem;color:#888;margin:0">Contenido en el Manual de Convivencia</p></div>
-      </div>
-
-      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem">
-        <div style="min-width:40px;height:40px;background:var(--verde-suave);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">🏛️</div>
-        <div><p style="font-size:0.88rem;font-weight:700;color:var(--verde);margin:0">Reglamento del Salón Social</p><p style="font-size:0.75rem;color:#888;margin:0">Contenido en el Manual de Convivencia</p></div>
-      </div>
-
-      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem">
-        <div style="min-width:40px;height:40px;background:var(--verde-suave);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">🚗</div>
-        <div><p style="font-size:0.88rem;font-weight:700;color:var(--verde);margin:0">Reglamento del Parqueadero</p><p style="font-size:0.75rem;color:#888;margin:0">Contenido en el Manual de Convivencia</p></div>
-      </div>
-
-      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem">
-        <div style="min-width:40px;height:40px;background:var(--verde-suave);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">🤝</div>
-        <div><p style="font-size:0.88rem;font-weight:700;color:var(--verde);margin:0">Comité de Convivencia</p><p style="font-size:0.75rem;color:#888;margin:0">Contenido en el Manual de Convivencia</p></div>
-      </div>
-
-      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem">
-        <div style="min-width:40px;height:40px;background:#FFF3E0;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">⚖️</div>
-        <div><p style="font-size:0.88rem;font-weight:700;color:var(--tierra);margin:0">Ley 675 de 2001</p><p style="font-size:0.75rem;color:#888;margin:0">Régimen de Propiedad Horizontal</p></div>
-      </div>
-
-      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem">
-        <div style="min-width:40px;height:40px;background:#FFF3E0;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">📜</div>
-        <div><p style="font-size:0.88rem;font-weight:700;color:var(--tierra);margin:0">R.P.H — Escritura Pública</p><p style="font-size:0.75rem;color:#888;margin:0">Escritura N° 2554 · Notaría 35 · 2007</p></div>
-      </div>
-
-      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem">
-        <div style="min-width:40px;height:40px;background:#FFF3E0;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">🔒</div>
-        <div><p style="font-size:0.88rem;font-weight:700;color:var(--tierra);margin:0">Política de tratamiento de datos</p><p style="font-size:0.75rem;color:#888;margin:0">Ley 1581 de 2012 · Habeas Data</p></div>
-      </div>
-
-    </div>
-
-    <!-- Reporte de mala convivencia -->
-    <div style="background:#fff;border-radius:4px;border:1.5px solid #e74c3c;padding:2rem;margin-top:2rem">
-      <h3 style="font-size:1rem;font-weight:700;color:#c0392b;margin-bottom:0.5rem">🚨 Reporte de mala convivencia</h3>
-      <p style="font-size:0.82rem;color:#777;margin-bottom:1.25rem;line-height:1.6">Si usted o algún vecino ha sido afectado por conductas que van en contra del Manual de Convivencia, diligencie este formulario. La administración lo tramitará de forma confidencial.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-        <div>
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Su apartamento *</label>
-          <input type="text" id="mc_apto" placeholder="Número de apto" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:Lato,sans-serif">
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Apartamento reportado</label>
-          <input type="text" id="mc_reportado" placeholder="Número de apto del infractor" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:Lato,sans-serif">
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Tipo de infracción</label>
-          <select id="mc_tipo" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:Lato,sans-serif;background:#fff">
-            <option value="">Seleccione...</option>
-            <option>Ruido excesivo</option>
-            <option>Mal uso de zonas comunes</option>
-            <option>Mascotas sin control</option>
-            <option>Parqueadero indebido</option>
-            <option>Daño a bienes comunes</option>
-            <option>Agresión verbal o física</option>
-            <option>Basuras mal dispuestas</option>
-            <option>Otra infracción</option>
-          </select>
-        </div>
-        <div>
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Fecha y hora del hecho *</label>
-          <input type="datetime-local" id="mc_fecha" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:Lato,sans-serif">
-          <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Descripción del hecho *</label>
-          <textarea id="mc_desc" placeholder="Describa detalladamente lo ocurrido..." style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;height:100px;resize:none;font-family:Lato,sans-serif"></textarea>
-        </div>
-      </div>
-      <button onclick="enviarReporte()" style="margin-top:1rem;background:#c0392b;color:#fff;border:none;padding:0.65rem 2rem;border-radius:3px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:Lato,sans-serif">Enviar reporte</button>
+      <a href="manual_convivencia_alameda.pdf" download style="text-decoration:none"><div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem"><div style="min-width:40px;height:40px;background:var(--verde-suave);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">📄</div><div><p style="font-size:0.88rem;font-weight:700;color:var(--verde);margin:0">Manual de Convivencia</p><p style="font-size:0.75rem;color:#888;margin:0">Descarga disponible · PDF</p></div></div></a>
+      <div style="background:#fff;border-radius:4px;border:0.5px solid #e0dbd5;padding:1.25rem;display:flex;align-items:center;gap:1rem"><div style="min-width:40px;height:40px;background:#FFF3E0;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">⚖️</div><div><p style="font-size:0.88rem;font-weight:700;color:var(--tierra);margin:0">Ley 675 de 2001</p><p style="font-size:0.75rem;color:#888;margin:0">Régimen de Propiedad Horizontal</p></div></div>
     </div>
   </div>
 </div>
-
-<!-- GALERÍA -->
 <div style="background:var(--crema);padding:3rem 2rem" id="galeria">
   <div style="max-width:980px;margin:0 auto">
     <div class="section-title">Galería y actividades</div>
     <div class="section-line"></div>
-
-    <!-- Filtros -->
     <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.5rem">
       <button onclick="filtrarGaleria('todos')" id="filtro-todos" style="background:var(--verde);color:#fff;border:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.82rem;cursor:pointer;font-family:Lato,sans-serif;font-weight:700">Todos</button>
-      <button onclick="filtrarGaleria('equipo')" id="filtro-equipo" style="background:#fff;color:#666;border:0.5px solid #ddd;padding:0.45rem 1rem;border-radius:20px;font-size:0.82rem;cursor:pointer;font-family:Lato,sans-serif">Equipo de trabajo</button>
-      <button onclick="filtrarGaleria('eventos')" id="filtro-eventos" style="background:#fff;color:#666;border:0.5px solid #ddd;padding:0.45rem 1rem;border-radius:20px;font-size:0.82rem;cursor:pointer;font-family:Lato,sans-serif">Eventos</button>
       <button onclick="filtrarGaleria('zonas')" id="filtro-zonas" style="background:#fff;color:#666;border:0.5px solid #ddd;padding:0.45rem 1rem;border-radius:20px;font-size:0.82rem;cursor:pointer;font-family:Lato,sans-serif">Zonas comunes</button>
-      <button onclick="filtrarGaleria('obras')" id="filtro-obras" style="background:#fff;color:#666;border:0.5px solid #ddd;padding:0.45rem 1rem;border-radius:20px;font-size:0.82rem;cursor:pointer;font-family:Lato,sans-serif">Obras y mejoras</button>
+      <button onclick="filtrarGaleria('eventos')" id="filtro-eventos" style="background:#fff;color:#666;border:0.5px solid #ddd;padding:0.45rem 1rem;border-radius:20px;font-size:0.82rem;cursor:pointer;font-family:Lato,sans-serif">Eventos</button>
     </div>
-
-    <!-- Grid de fotos -->
     <div id="galeria-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem"></div>
-
-    <div id="galeria-vacia" style="text-align:center;padding:3rem;color:#aaa;background:#fff;border-radius:8px;border:0.5px solid #e0dbd5">
-      <div style="font-size:2rem;margin-bottom:0.75rem">📸</div>
-      <p style="font-size:0.9rem;font-weight:700;color:#888;margin-bottom:0.3rem">Próximamente fotos del conjunto</p>
-      <p style="font-size:0.82rem">La administración publicará fotos de actividades, equipo de trabajo y zonas comunes.</p>
-    </div>
-
-    <!-- Modal visor de fotos -->
-    <div id="modal-foto" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column" onclick="cerrarModal()">
-      <img id="modal-img" src="" style="max-width:90vw;max-height:80vh;object-fit:contain;border-radius:4px">
-      <div style="color:#fff;margin-top:1rem;text-align:center;padding:0 1rem">
-        <p id="modal-titulo" style="font-size:1rem;font-weight:700;margin-bottom:0.3rem"></p>
-        <p id="modal-desc" style="font-size:0.82rem;color:rgba(255,255,255,0.7)"></p>
-      </div>
-    </div>
+    <div id="galeria-vacia" style="text-align:center;padding:3rem;color:#aaa;background:#fff;border-radius:8px;border:0.5px solid #e0dbd5;display:none"><div style="font-size:2rem;margin-bottom:0.75rem">📸</div><p style="font-size:0.9rem;font-weight:700;color:#888">No hay fotos en esta categoría</p></div>
+    <div id="modal-foto" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column" onclick="cerrarModal()"><img id="modal-img" src="" style="max-width:90vw;max-height:80vh;object-fit:contain;border-radius:4px"><div style="color:#fff;margin-top:1rem;text-align:center"><p id="modal-titulo" style="font-size:1rem;font-weight:700"></p></div></div>
   </div>
 </div>
-
 <script>
-var fotosDefault = [
-  {id:1, titulo:'Torres Alameda Campestre', cat:'zonas', fecha:'Mayo 2026', desc:'Vista de las cuatro torres del conjunto', img:'foto_torres.jpg'},
-  {id:2, titulo:'Plazoleta principal', cat:'zonas', fecha:'Mayo 2026', desc:'Zona de circulación y acceso al conjunto', img:'foto_plazoleta1.jpg'},
-  {id:3, titulo:'Parque infantil', cat:'zonas', fecha:'Mayo 2026', desc:'Zona de juegos para los niños del conjunto', img:'foto_parque.jpg'},
-  {id:4, titulo:'Zonas verdes y plazoleta', cat:'zonas', fecha:'Mayo 2026', desc:'Amplias zonas verdes y área de descanso', img:'foto_plazoleta2.jpg'},
-  {id:5, titulo:'Cancha de golfito', cat:'zonas', fecha:'Mayo 2026', desc:'Zona de recreación al aire libre', img:'foto_canchagolit.jpg'},
-  {id:6, titulo:'Salón social', cat:'zonas', fecha:'Mayo 2026', desc:'Salón comunal con capacidad para 60 personas, TV y sonido', img:'foto_salon.jpg'},
-  {id:7, titulo:'Cancha de fútbol', cat:'zonas', fecha:'Mayo 2026', desc:'Cancha multifuncional techada para fútbol y voleibol', img:'foto_cancha.jpg'},
-  {id:8, titulo:'Baños del salón social', cat:'zonas', fecha:'Mayo 2026', desc:'Baños dotados para hombres y mujeres', img:'foto_banos1.jpg'},
-  {id:9, titulo:'Gimnasio — Área de pesas', cat:'zonas', fecha:'Mayo 2026', desc:'Gimnasio completamente dotado con máquinas y pesas', img:'foto_gimnasio1.jpg'},
-  {id:10, titulo:'Gimnasio — Área cardiovascular', cat:'zonas', fecha:'Mayo 2026', desc:'Bicicletas, elípticas y equipos cardiovasculares', img:'foto_gimnasio2.jpg'},
-  {id:11, titulo:'Sauna', cat:'zonas', fecha:'Mayo 2026', desc:'Sauna en madera para 5 personas', img:'foto_sauna.jpg'},
-  {id:12, titulo:'Piscina cubierta', cat:'zonas', fecha:'Mayo 2026', desc:'Piscina climatizada con capacidad para 10 personas', img:'foto_piscina.jpg'},
-  {id:13, titulo:'Turco', cat:'zonas', fecha:'Mayo 2026', desc:'Turco con capacidad para 5 personas', img:'foto_turco.jpg'},
-  {id:14, titulo:'Cocina del salón social', cat:'zonas', fecha:'Mayo 2026', desc:'Cocina equipada incluida con el salón social', img:'foto_cocina.jpg'},
-  {id:15, titulo:'Baños zona húmeda', cat:'zonas', fecha:'Mayo 2026', desc:'Baños modernos en la zona de piscina y sauna', img:'foto_banos2.jpg'},
-  {id:16, titulo:'Portería — Ventanilla de atención', cat:'zonas', fecha:'Mayo 2026', desc:'Portería moderna con ventanilla de atención al residente', img:'foto_porteria1.jpg'},
-  {id:17, titulo:'Portería — Sala de espera', cat:'zonas', fecha:'Mayo 2026', desc:'Elegante sala de espera en la portería del conjunto', img:'foto_porteria2.jpg'},
+var fotosGaleria=[
+  {id:1,titulo:'Torres Alameda Campestre',cat:'zonas',fecha:'2026',desc:'Vista de las cuatro torres',img:'foto_torres.jpg'},
+  {id:2,titulo:'Salón social',cat:'zonas',fecha:'2026',desc:'Salón comunal para 60 personas',img:'foto_salon.jpg'},
+  {id:3,titulo:'Sauna',cat:'zonas',fecha:'2026',desc:'Sauna en madera',img:'foto_sauna.jpg'},
+  {id:4,titulo:'Turco',cat:'zonas',fecha:'2026',desc:'Turco para 5 personas',img:'foto_turco.jpg'},
+  {id:5,titulo:'Recepción',cat:'zonas',fecha:'2026',desc:'Portería moderna',img:'foto_porteria1.jpg'},
+  {id:6,titulo:'Lobby',cat:'zonas',fecha:'2026',desc:'Sala de espera',img:'foto_porteria2.jpg'},
+  {id:7,titulo:'Cancha de fútbol',cat:'zonas',fecha:'2026',desc:'Cancha multifuncional',img:'foto_cancha.jpg'},
+  {id:8,titulo:'Cancha de golfito',cat:'zonas',fecha:'2026',desc:'Zona recreativa',img:'foto_canchagolit.jpg'},
+  {id:9,titulo:'Gimnasio',cat:'zonas',fecha:'2026',desc:'Área de pesas',img:'foto_gimnasio1.jpg'},
+  {id:10,titulo:'Gimnasio',cat:'zonas',fecha:'2026',desc:'Área cardiovascular',img:'foto_gimnasio2.jpg'},
+  {id:11,titulo:'Piscina cubierta',cat:'zonas',fecha:'2026',desc:'Piscina climatizada',img:'foto_piscina.jpg'},
+  {id:12,titulo:'Baños salón social',cat:'zonas',fecha:'2026',desc:'Baños dotados',img:'foto_banos1.jpg'},
+  
+  {id:14,titulo:'Cocina salón social',cat:'zonas',fecha:'2026',desc:'Cocina equipada',img:'foto_cocina.jpg'},
+  {id:15,titulo:'Parque infantil',cat:'zonas',fecha:'2026',desc:'Zona de juegos',img:'foto_parque.jpg'},
+  {id:16,titulo:'Plazoleta principal',cat:'zonas',fecha:'2026',desc:'Zona de circulación',img:'foto_plazoleta1.jpg'},
+  {id:17,titulo:'Zonas verdes',cat:'zonas',fecha:'2026',desc:'Áreas verdes y descanso',img:'foto_plazoleta2.jpg'},
 ];
-var fotosExtra = JSON.parse(localStorage.getItem('galeria_alameda') || '[]');
-var fotosGaleria = fotosDefault.concat(fotosExtra);
-
-function renderGaleria(filtro) {
-  var grid = document.getElementById('galeria-grid');
-  var vacia = document.getElementById('galeria-vacia');
-  var fotos = filtro && filtro !== 'todos' ? fotosGaleria.filter(function(f){ return f.cat === filtro; }) : fotosGaleria;
-
-  if (!fotos.length) {
-    grid.style.display = 'none';
-    vacia.style.display = 'block';
-    return;
-  }
-  vacia.style.display = 'none';
-  grid.style.display = 'grid';
-  grid.innerHTML = fotos.map(function(f, i) {
-    var catColor = {equipo:'#2D6A4F', eventos:'#8B5E3C', zonas:'#1a5276', obras:'#7d6608'}[f.cat] || '#555';
-    var catNombre = {equipo:'Equipo', eventos:'Evento', zonas:'Zona común', obras:'Obras'}[f.cat] || f.cat;
-    return '<div style="background:#fff;border-radius:8px;overflow:hidden;border:0.5px solid #e0dbd5;cursor:pointer;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'" onclick="abrirModal('' + f.img + '','' + escHtml(f.titulo) + '','' + escHtml(f.desc||'') + '')">' +
-      '<div style="height:200px;overflow:hidden;background:#f0f0f0">' +
-      '<img src="' + f.img + '" alt="' + escHtml(f.titulo) + '" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=height:200px;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:2rem>📸</div>'">' +
-      '</div>' +
-      '<div style="padding:0.875rem">' +
-      '<span style="display:inline-block;background:' + catColor + ';color:#fff;font-size:0.65rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:2px;margin-bottom:0.4rem;text-transform:uppercase">' + catNombre + '</span>' +
-      '<p style="font-size:0.88rem;font-weight:700;color:#2C3E28;margin-bottom:0.2rem">' + escHtml(f.titulo) + '</p>' +
-      (f.desc ? '<p style="font-size:0.78rem;color:#888;line-height:1.4">' + escHtml(f.desc) + '</p>' : '') +
-      '<p style="font-size:0.72rem;color:#bbb;margin-top:0.4rem">' + (f.fecha||'') + '</p>' +
-      '</div></div>';
+function renderGaleria(filtro){
+  var grid=document.getElementById('galeria-grid');
+  var vacia=document.getElementById('galeria-vacia');
+  var fotos=filtro&&filtro!=='todos'?fotosGaleria.filter(function(f){return f.cat===filtro;}):fotosGaleria;
+  if(!fotos.length){grid.style.display='none';vacia.style.display='block';return;}
+  vacia.style.display='none';grid.style.display='grid';
+  grid.innerHTML=fotos.map(function(f){
+    return '<div style="background:#fff;border-radius:8px;overflow:hidden;border:0.5px solid #e0dbd5;cursor:pointer" onclick="abrirModal(\''+f.img+'\',\''+f.titulo+'\')">'+
+    '<div style="height:200px;overflow:hidden;background:#f0f0f0"><img src="'+f.img+'" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.style.display=\'none\'"></div>'+
+    '<div style="padding:0.875rem"><p style="font-size:0.88rem;font-weight:700;color:#2C3E28;margin-bottom:0.2rem">'+f.titulo+'</p>'+
+    (f.desc?'<p style="font-size:0.78rem;color:#888">'+f.desc+'</p>':'')+
+    '</div></div>';
   }).join('');
 }
-
-function escHtml(str) {
-  return (str||'').replace(/'/g,"&#39;").replace(/"/g,"&quot;");
-}
-
-function filtrarGaleria(cat) {
-  document.querySelectorAll('[id^=filtro-]').forEach(function(b){
-    b.style.background = '#fff'; b.style.color = '#666'; b.style.border = '0.5px solid #ddd'; b.style.fontWeight = 'normal';
-  });
-  var btn = document.getElementById('filtro-' + cat);
-  if (btn) { btn.style.background = 'var(--verde)'; btn.style.color = '#fff'; btn.style.border = 'none'; btn.style.fontWeight = '700'; }
+function filtrarGaleria(cat){
+  document.querySelectorAll('[id^=filtro-]').forEach(function(b){b.style.background='#fff';b.style.color='#666';b.style.border='0.5px solid #ddd';b.style.fontWeight='normal';});
+  var btn=document.getElementById('filtro-'+cat);
+  if(btn){btn.style.background='var(--verde)';btn.style.color='#fff';btn.style.border='none';btn.style.fontWeight='700';}
   renderGaleria(cat);
 }
-
-function abrirModal(img, titulo, desc) {
-  document.getElementById('modal-foto').style.display = 'flex';
-  document.getElementById('modal-img').src = img;
-  document.getElementById('modal-titulo').textContent = titulo;
-  document.getElementById('modal-desc').textContent = desc;
-}
-
-function cerrarModal() { document.getElementById('modal-foto').style.display = 'none'; }
-
+function abrirModal(img,titulo){document.getElementById('modal-foto').style.display='flex';document.getElementById('modal-img').src=img;document.getElementById('modal-titulo').textContent=titulo;}
+function cerrarModal(){document.getElementById('modal-foto').style.display='none';}
 renderGaleria('todos');
 </script>
-
-<!-- EQUIPO -->
 <div style="background:#fff;padding:3rem 2rem" id="equipo">
   <div style="max-width:980px;margin:0 auto">
     <div class="section-title">Nuestro equipo de trabajo</div>
     <div class="section-line"></div>
-    <div id="equipo-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.25rem"></div>
-    <div id="equipo-vacio" style="text-align:center;padding:2rem;color:#aaa;background:var(--crema);border-radius:8px">
-      <div style="font-size:2rem;margin-bottom:0.5rem">👥</div>
-      <p style="font-size:0.88rem">Próximamente conocerá al equipo de Alameda Campestre.</p>
-    </div>
+    <div style="text-align:center;padding:2rem;color:#aaa;background:var(--crema);border-radius:8px"><div style="font-size:2rem;margin-bottom:0.5rem">👥</div><p style="font-size:0.88rem">Próximamente conocerá al equipo de Alameda Campestre.</p></div>
   </div>
 </div>
-
-<script>
-var equipoData = JSON.parse(localStorage.getItem('equipo_alameda') || '[]');
-
-function renderEquipo() {
-  var grid = document.getElementById('equipo-grid');
-  var vacio = document.getElementById('equipo-vacio');
-  if (!equipoData.length) { grid.style.display='none'; vacio.style.display='block'; return; }
-  vacio.style.display = 'none';
-  grid.style.display = 'grid';
-  grid.innerHTML = equipoData.map(function(m) {
-    var iniciales = m.nombre.split(' ').map(function(n){ return n[0]; }).slice(0,2).join('');
-    return '<div style="background:var(--crema);border-radius:8px;padding:1.25rem;text-align:center;border:0.5px solid #e0dbd5">' +
-      (m.foto ? '<img src="' + m.foto + '" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--verde-claro);margin-bottom:0.75rem">' :
-      '<div style="width:80px;height:80px;border-radius:50%;background:var(--verde-suave);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--verde);font-size:1.2rem;margin:0 auto 0.75rem">' + iniciales + '</div>') +
-      '<p style="font-size:0.9rem;font-weight:700;color:var(--texto);margin-bottom:0.2rem">' + m.nombre + '</p>' +
-      '<p style="font-size:0.78rem;color:var(--verde);font-weight:700;margin-bottom:0.1rem">' + m.cargo + '</p>' +
-      '<p style="font-size:0.72rem;color:#aaa">' + m.area + '</p>' +
-      '</div>';
-  }).join('');
-}
-
-renderEquipo();
-</script>
-
-<!-- CLASIFICADOS -->
 <div style="background:#fff;padding:3rem 2rem" id="clasificados">
   <div style="max-width:980px;margin:0 auto">
     <div class="section-title">Clasificados — Venta y arriendo</div>
     <div class="section-line"></div>
-    <p style="font-size:0.88rem;color:#666;margin-bottom:2rem;line-height:1.7">Espacio exclusivo para residentes y propietarios del conjunto. Publique la venta, arriendo de su apartamento o renta de garaje. La administración verificará y publicará su aviso.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
-      <div style="background:var(--crema);border-radius:4px;border:0.5px solid #e0dbd5;padding:1.5rem">
-        <h3 style="font-size:1rem;font-weight:700;color:var(--verde);margin-bottom:1.25rem">📢 Publicar aviso</h3>
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Tipo de aviso *</label>
-        <select id="cl_tipo" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:Lato,sans-serif;background:#fff">
-          <option value="">Seleccione...</option>
-          <option>Vendo apartamento</option>
-          <option>Arriendo apartamento</option>
-          <option>Arriendo garaje</option>
-          <option>Vendo garaje</option>
-        </select>
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Número de apartamento *</label>
-        <input type="text" id="cl_apto" placeholder="Ej: Apto 502" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:Lato,sans-serif">
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Precio</label>
-        <input type="text" id="cl_precio" placeholder="Ej: $350.000.000 o $2.500.000/mes" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:Lato,sans-serif">
-
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Depósito</label>
-        <input type="text" id="cl_deposito" placeholder="Ej: $2.500.000 (un mes)" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:0.75rem;font-family:Lato,sans-serif">
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Descripción</label>
-        <textarea id="cl_desc" placeholder="Área, habitaciones, baños, características..." style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;height:80px;resize:none;font-family:Lato,sans-serif;margin-bottom:0.75rem"></textarea>
-        <label style="font-size:0.8rem;color:#666;display:block;margin-bottom:0.3rem">Teléfono de contacto *</label>
-        <input type="tel" id="cl_tel" placeholder="300 000 0000" style="width:100%;border:0.5px solid #ddd;border-radius:3px;padding:0.55rem 0.75rem;font-size:0.85rem;margin-bottom:1rem;font-family:Lato,sans-serif">
-        <button onclick="enviarClasificado()" style="width:100%;background:var(--verde);color:#fff;border:none;padding:0.65rem;border-radius:3px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:Lato,sans-serif">Enviar a administración</button>
-      </div>
-
-      <div>
-        <h3 style="font-size:1rem;font-weight:700;color:var(--verde);margin-bottom:1.25rem">🏠 Avisos publicados</h3>
-        <div style="background:var(--verde-suave);border-radius:4px;padding:1.25rem;margin-bottom:1rem;border:0.5px solid rgba(45,106,79,0.2)">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem">
-            <span style="background:var(--verde);color:#fff;font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:2px;text-transform:uppercase">Se arrienda</span>
-            <span style="font-size:0.72rem;color:#888">Contacte a administración</span>
-          </div>
-          <p style="font-size:0.88rem;font-weight:700;color:var(--texto);margin:0 0 0.3rem">Apartamento en Alameda Campestre</p>
-          <p style="font-size:0.8rem;color:#666;margin:0 0 0.5rem">Para publicar su aviso diligencie el formulario. La administración lo revisará y publicará aquí.</p>
-          <p style="font-size:0.8rem;color:var(--verde);font-weight:700;margin:0">📞 Contactar: 601 694 9075</p>
-        </div>
-        <div style="background:#FFF3E0;border-radius:4px;padding:1rem;border:0.5px solid rgba(139,94,60,0.2)">
-          <p style="font-size:0.82rem;color:var(--tierra);line-height:1.6;margin:0">📌 <strong>Nota:</strong> Solo se permiten avisos de propietarios y residentes del conjunto. Recuerde que según el reglamento, solo se acepta publicidad de arriendo o venta en ventanas y balcón del propio apartamento.</p>
-        </div>
-      </div>
-    </div>
+    <p style="font-size:0.88rem;color:#666;margin-bottom:1rem">Para publicar su aviso de venta o arriendo contáctenos al correo <strong>alamedacampestre1@gmail.com</strong>.</p>
   </div>
 </div>
-
-<script>
-function enviarReporte() {
-  var apto = document.getElementById('mc_apto').value;
-  var desc = document.getElementById('mc_desc').value;
-  if (!apto || !desc) { alert('Complete los campos obligatorios (*)'); return; }
-  var reportado = document.getElementById('mc_reportado').value;
-  var tipo = document.getElementById('mc_tipo').value;
-  var fecha = document.getElementById('mc_fecha').value;
-  var cuerpo = 'REPORTE DE MALA CONVIVENCIA\n\n';
-  cuerpo += 'Apartamento que reporta: ' + apto + '\n';
-  cuerpo += 'Apartamento reportado: ' + reportado + '\n';
-  cuerpo += 'Tipo de infracción: ' + tipo + '\n';
-  cuerpo += 'Fecha y hora: ' + fecha + '\n';
-  cuerpo += 'Descripción: ' + desc;
-  window.location.href = 'mailto:alamedacampestre1@gmail.com?subject=Reporte mala convivencia - Apto ' + encodeURIComponent(apto) + '&body=' + encodeURIComponent(cuerpo);
-}
-
-function enviarClasificado() {
-  var tipo = document.getElementById('cl_tipo').value;
-  var apto = document.getElementById('cl_apto').value;
-  var tel = document.getElementById('cl_tel').value;
-  if (!tipo || !apto || !tel) { alert('Complete los campos obligatorios (*)'); return; }
-  var precio = document.getElementById('cl_precio').value;
-  var desc = document.getElementById('cl_desc').value;
-  var cuerpo = 'SOLICITUD DE CLASIFICADO\n\n';
-  cuerpo += 'Tipo: ' + tipo + '\n';
-  cuerpo += 'Apartamento: ' + apto + '\n';
-  cuerpo += 'Precio: ' + precio + '\n';
-  cuerpo += 'Descripción: ' + desc + '\n';
-  cuerpo += 'Teléfono: ' + tel;
-  window.location.href = 'mailto:alamedacampestre1@gmail.com?subject=Clasificado - ' + encodeURIComponent(tipo) + ' ' + encodeURIComponent(apto) + '&body=' + encodeURIComponent(cuerpo);
-}
-</script>
-
-<!-- CONTACTO -->
 <div class="contacto-bg" id="contacto">
   <div class="contacto-inner">
     <div>
       <h2>Contáctenos</h2>
       <div class="linea"></div>
-
-      <div class="admin-badge">
-        <span style="font-size:1.2rem">👩‍💼</span>
-        <div>
-          <span class="admin-label">Administradora</span>
-          <strong>Gladys Acosta Caro</strong>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-ico">📍</div>
-        <div class="contact-txt">
-          <p>Dirección</p>
-          <strong>Cra 15 #170-65, Bogotá</strong>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-ico">📞</div>
-        <div class="contact-txt">
-          <p>Teléfono</p>
-          <strong>601 694 9075</strong>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-ico">✉️</div>
-        <div class="contact-txt">
-          <p>Correo electrónico</p>
-          <strong>alamedacampestre1@gmail.com</strong>
-        </div>
-      </div>
-
+      <div class="contact-item"><div class="contact-ico">📍</div><div class="contact-txt"><p>Dirección</p><strong>Cra 15 #170-65, Bogotá</strong></div></div>
+      <div class="contact-item"><div class="contact-ico">📞</div><div class="contact-txt"><p>Teléfono</p><strong>601 694 9075</strong></div></div>
+      <div class="contact-item"><div class="contact-ico">✉️</div><div class="contact-txt"><p>Correo</p><strong>alamedacampestre1@gmail.com</strong></div></div>
       <div class="horario-box">
         <h4>🕐 Horario de atención</h4>
-        <div class="horario-row">
-          <span class="horario-dia">Lunes</span>
-          <span class="horario-hora">8:30 AM – 12:00 M</span>
-        </div>
-        <div class="horario-row">
-          <span class="horario-dia">Martes</span>
-          <span class="horario-hora">8:30 AM – 10:00 AM<span class="atencion">Atención al público</span></span>
-        </div>
-        <div class="horario-row">
-          <span class="horario-dia">Miércoles</span>
-          <span class="cerrado">Sin atención</span>
-        </div>
-        <div class="horario-row">
-          <span class="horario-dia">Jueves</span>
-          <span class="horario-hora">3:30 PM – 7:00 PM<span class="atencion">Atención al público: 5:00 – 7:00 PM</span></span>
-        </div>
-        <div class="horario-row">
-          <span class="horario-dia">Viernes</span>
-          <span class="horario-hora">2:30 PM – 5:30 PM</span>
-        </div>
-        <div class="horario-row">
-          <span class="horario-dia">Sábado</span>
-          <span class="horario-hora">8:30 AM – 12:00 M<span class="atencion">2° y 4° sábado del mes</span></span>
-        </div>
+        <div class="horario-row"><span class="horario-dia">Lunes</span><span class="horario-hora">8:30 AM – 12:00 M</span></div>
+        <div class="horario-row"><span class="horario-dia">Martes</span><span class="horario-hora">8:30 AM – 10:00 AM<span style="display:block;color:var(--verde-claro);font-size:0.72rem">Atención al público</span></span></div>
+        <div class="horario-row"><span class="horario-dia">Miércoles</span><span class="cerrado">Sin atención</span></div>
+        <div class="horario-row"><span class="horario-dia">Jueves</span><span class="horario-hora">3:30 PM – 7:00 PM<span style="display:block;color:var(--verde-claro);font-size:0.72rem">Atención al público: 5:00 – 7:00 PM</span></span></div>
+        <div class="horario-row"><span class="horario-dia">Viernes</span><span class="horario-hora">2:30 PM – 5:30 PM</span></div>
+        <div class="horario-row"><span class="horario-dia">Sábado</span><span class="horario-hora">8:30 AM – 12:00 M<span style="display:block;color:var(--verde-claro);font-size:0.72rem">2° y 4° sábado del mes</span></span></div>
       </div>
     </div>
-
     <div class="form-pqr">
       <h3>Enviar PQR</h3>
-      <input type="text" placeholder="Nombre completo y número de apto">
-      <input type="text" placeholder="Correo electrónico o teléfono">
-      <select>
-        <option value="">Tipo de solicitud</option>
-        <option>Petición</option>
-        <option>Queja</option>
-        <option>Reclamo</option>
-        <option>Sugerencia</option>
-        <option>Felicitación</option>
-      </select>
-      <textarea placeholder="Describa su solicitud..."></textarea>
-      <button class="btn-send" onclick="alert('¡Mensaje enviado! La administración le responderá pronto.')">Enviar solicitud</button>
+      <input type="text" id="pqr_nombre" placeholder="Nombre y número de apto">
+      <input type="text" id="pqr_contacto" placeholder="Correo o teléfono">
+      <select id="pqr_tipo"><option value="">Tipo de solicitud</option><option>Petición</option><option>Queja</option><option>Reclamo</option><option>Sugerencia</option></select>
+      <textarea id="pqr_mensaje" placeholder="Describa su solicitud..."></textarea>
+      <button class="btn-send" onclick="enviarPQR()">Enviar solicitud</button>
     </div>
   </div>
 </div>
-
-<!-- REGLAMENTO -->
+<script>
+function enviarPQR(){var n=document.getElementById('pqr_nombre').value,c=document.getElementById('pqr_contacto').value,t=document.getElementById('pqr_tipo').value,m=document.getElementById('pqr_mensaje').value;if(!n||!m){alert('Complete nombre y mensaje');return;}window.location.href='mailto:alamedacampestre1@gmail.com?subject=PQR - '+encodeURIComponent(t||'Solicitud')+'&body='+encodeURIComponent('De: '+n+'\nContacto: '+c+'\nTipo: '+t+'\n\n'+m);}
+</script>
 <div class="section" id="reglamento">
-  <div class="section-title">Reglamento y documentos</div>
+  <div class="section-title">Reglamento</div>
   <div class="section-line"></div>
   <div class="cards">
-    <div class="card" style="border-left:3px solid var(--verde)">
-      <div class="card-icon">📄</div>
-      <h3>Manual de Convivencia</h3>
-      <p>Normas de convivencia aprobadas en Asamblea General el 24 de abril de 2025. De obligatorio cumplimiento para propietarios, residentes y visitantes.</p>
-      <a href="manual_convivencia_alameda.pdf" download style="display:inline-block;margin-top:1rem;background:var(--verde);color:#fff;padding:0.45rem 1rem;border-radius:3px;text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.5px">⬇ Descargar PDF</a>
-    </div>
-    <div class="card">
-      <div class="card-icon">⚖️</div>
-      <h3>Régimen de propiedad horizontal</h3>
-      <p>El conjunto se rige por la Ley 675 de 2001 y la Escritura Pública N° 2554 del 23 de julio de 2007 de la Notaría 35 de Bogotá.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🚨</div>
-      <h3>Sanciones</h3>
-      <p>Falta leve: 10 SMLDV · Falta grave: 15 SMLDV · Falta muy grave: 20 SMLDV. En reincidencia aplica el siguiente nivel de gravedad.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🤝</div>
-      <h3>Comité de convivencia</h3>
-      <p>Instancia de solución de conflictos entre residentes. Se elige anualmente en la Asamblea General. Contacte a la administración para más información.</p>
-    </div>
+    <div class="card" style="border-left:3px solid var(--verde)"><div class="card-icon">📄</div><h3>Manual de Convivencia</h3><p>Normas aprobadas en Asamblea el 24 de abril de 2025.</p><a href="manual_convivencia_alameda.pdf" download style="display:inline-block;margin-top:1rem;background:var(--verde);color:#fff;padding:0.45rem 1rem;border-radius:3px;text-decoration:none;font-size:0.8rem;font-weight:700">⬇ Descargar PDF</a></div>
+    <div class="card"><div class="card-icon">⚖️</div><h3>Ley 675 de 2001</h3><p>Régimen de Propiedad Horizontal. Marco legal del conjunto.</p></div>
+    <div class="card"><div class="card-icon">🚨</div><h3>Sanciones</h3><p>Falta leve: 10 SMLDV · Falta grave: 15 SMLDV · Falta muy grave: 20 SMLDV.</p></div>
   </div>
 </div>
-
-<!-- FOOTER -->
 <footer>
   <img src="logo_alameda.png" alt="Alameda Campestre" onerror="this.style.display='none'">
-  <p>
-    <strong>Conjunto Residencial Alameda Campestre PH</strong><br>
-    Cra 15 #170-65, Bogotá, Colombia · Tel: 601 694 9075<br>
-    alamedacampestre1@gmail.com<br>
-    NIT: 900.138.707-7 · Administradora: Gladys Acosta Caro<br><br>
-    © 2025 Alameda Campestre PH · Todos los derechos reservados
-  </p>
+  <p><strong>Conjunto Residencial Alameda Campestre PH</strong><br>Cra 15 #170-65, Bogotá · Tel: 601 694 9075<br>alamedacampestre1@gmail.com · NIT: 900.138.707-7<br>Administradora: Gladys Acosta Caro<br><br>© 2026 Alameda Campestre PH</p>
 </footer>
-
 </body>
 </html>
