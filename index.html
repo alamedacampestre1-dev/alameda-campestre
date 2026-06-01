@@ -841,23 +841,12 @@ function enviarDatos() {
 
 <script>
 var fotosDefault = [
-  {id:1, titulo:'Torres Alameda Campestre', cat:'zonas', fecha:'Mayo 2026', desc:'Vista de las cuatro torres del conjunto', img:'foto_torres.jpg'},
-  {id:2, titulo:'Plazoleta principal', cat:'zonas', fecha:'Mayo 2026', desc:'Zona de circulación y acceso al conjunto', img:'foto_plazoleta1.jpg'},
-  {id:3, titulo:'Parque infantil', cat:'zonas', fecha:'Mayo 2026', desc:'Zona de juegos para los niños del conjunto', img:'foto_parque.jpg'},
-  {id:4, titulo:'Zonas verdes y plazoleta', cat:'zonas', fecha:'Mayo 2026', desc:'Amplias zonas verdes y área de descanso', img:'foto_plazoleta2.jpg'},
-  {id:5, titulo:'Cancha de golfito', cat:'zonas', fecha:'Mayo 2026', desc:'Zona de recreación al aire libre', img:'foto_canchagolit.jpg'},
-  {id:6, titulo:'Salón social', cat:'zonas', fecha:'Mayo 2026', desc:'Salón comunal con capacidad para 60 personas, TV y sonido', img:'foto_salon.jpg'},
-  {id:7, titulo:'Cancha de fútbol', cat:'zonas', fecha:'Mayo 2026', desc:'Cancha multifuncional techada para fútbol y voleibol', img:'foto_cancha.jpg'},
-  {id:8, titulo:'Baños del salón social', cat:'zonas', fecha:'Mayo 2026', desc:'Baños dotados para hombres y mujeres', img:'foto_banos1.jpg'},
-  {id:9, titulo:'Gimnasio — Área de pesas', cat:'zonas', fecha:'Mayo 2026', desc:'Gimnasio completamente dotado con máquinas y pesas', img:'foto_gimnasio1.jpg'},
-  {id:10, titulo:'Gimnasio — Área cardiovascular', cat:'zonas', fecha:'Mayo 2026', desc:'Bicicletas, elípticas y equipos cardiovasculares', img:'foto_gimnasio2.jpg'},
-  {id:11, titulo:'Sauna', cat:'zonas', fecha:'Mayo 2026', desc:'Sauna en madera para 5 personas', img:'foto_sauna.jpg'},
-  {id:12, titulo:'Piscina cubierta', cat:'zonas', fecha:'Mayo 2026', desc:'Piscina climatizada con capacidad para 10 personas', img:'foto_piscina.jpg'},
-  {id:13, titulo:'Turco', cat:'zonas', fecha:'Mayo 2026', desc:'Turco con capacidad para 5 personas', img:'foto_turco.jpg'},
-  {id:14, titulo:'Cocina del salón social', cat:'zonas', fecha:'Mayo 2026', desc:'Cocina equipada incluida con el salón social', img:'foto_cocina.jpg'},
-  {id:15, titulo:'Baños zona húmeda', cat:'zonas', fecha:'Mayo 2026', desc:'Baños modernos en la zona de piscina y sauna', img:'foto_banos2.jpg'},
-  {id:16, titulo:'Portería — Ventanilla de atención', cat:'zonas', fecha:'Mayo 2026', desc:'Portería moderna con ventanilla de atención al residente', img:'foto_porteria1.jpg'},
-  {id:17, titulo:'Portería — Sala de espera', cat:'zonas', fecha:'Mayo 2026', desc:'Elegante sala de espera en la portería del conjunto', img:'foto_porteria2.jpg'},
+  {id:1, titulo:'Torres del conjunto', cat:'zonas', fecha:'Mayo 2026', desc:'Vista de las cuatro torres de Alameda Campestre', img:'foto_torres.jpg'},
+  {id:2, titulo:'Salón social', cat:'zonas', fecha:'Mayo 2026', desc:'Salón comunal con capacidad para 60 personas, TV y sonido', img:'foto_salon.jpg'},
+  {id:3, titulo:'Sauna', cat:'zonas', fecha:'Mayo 2026', desc:'Sauna en madera para 5 personas', img:'foto_sauna.jpg'},
+  {id:4, titulo:'Turco', cat:'zonas', fecha:'Mayo 2026', desc:'Turco con capacidad para 5 personas', img:'foto_turco.jpg'},
+  {id:5, titulo:'Portería — Ventanilla de atención', cat:'zonas', fecha:'Mayo 2026', desc:'Portería moderna con ventanilla de atención al residente', img:'foto_porteria1.jpg'},
+  {id:6, titulo:'Portería — Sala de espera', cat:'zonas', fecha:'Mayo 2026', desc:'Elegante sala de espera en la portería del conjunto', img:'foto_porteria2.jpg'},
 ];
 var fotosExtra = JSON.parse(localStorage.getItem('galeria_alameda') || '[]');
 var fotosGaleria = fotosDefault.concat(fotosExtra);
